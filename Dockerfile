@@ -16,9 +16,8 @@ COPY ./src /app/src
 COPY ./drizzle /app/drizzle
 COPY ./tsconfig.json /app/tsconfig.json
 RUN mkdir -p /app/data
-RUN pnpm run push
 RUN pnpm run build
 
 COPY ./.env /app/.env
 
-CMD ["pnpm", "run", "start"]
+CMD ["pnpm", "run", "start:prod"]

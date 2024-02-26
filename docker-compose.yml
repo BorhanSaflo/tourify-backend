@@ -8,4 +8,4 @@ services:
     ports:
       - "${PORT:-3000}:3000"
     volumes:
-      - ./data:/app/data
+      - ./data:/app/data:rw

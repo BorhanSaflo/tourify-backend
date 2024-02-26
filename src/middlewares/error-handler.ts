@@ -9,6 +9,7 @@ export const errorHandler = (
   next: NextFunction
 ) => {
   if (res.headersSent) return next();
+  console.log(error);
 
   let status = 500;
   let message = "Internal Server Error";
