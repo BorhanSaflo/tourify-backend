@@ -15,6 +15,13 @@
       "when": 1708863008045,
       "tag": "0001_greedy_siren",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708934138863,
+      "tag": "0002_chunky_mandroid",
+      "breakpoints": true
     }
   ]
 }

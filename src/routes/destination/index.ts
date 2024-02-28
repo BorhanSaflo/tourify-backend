@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { eq } from "drizzle-orm";
+import { count, desc, eq } from "drizzle-orm";
 import db from "../../db";
-import { destination } from "../../db/schema";
+import { destination, review, user } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 const router = Router();
 
@@ -13,8 +13,9 @@ router.get("/:id", async (req, res, next) => {
   }
 
   try {
-    const result = await db
+    const destinationQuery = await db
       .select({
+        id: destination.id,
         name: destination.name,
         country: destination.country,
         description: destination.description,
@@ -22,7 +23,26 @@ router.get("/:id", async (req, res, next) => {
       .from(destination)
       .where(eq(destination.id, id));
 
-    res.status(200).json(result[0]);
+    if (destinationQuery.length === 0) {
+      throw new NotFoundError("Destination not found");
+    }
+
+    const reviewsQuery = await db
+      .select({
+        id: review.id,
+        comment: review.comment,
+        timestamp: review.timestamp,
+        user: {
+          id: user.id,
+          name: user.name,
+        },
+      })
+      .from(review)
+      .innerJoin(user, eq(review.userId, user.id))
+      .where(eq(review.destinationId, id))
+      .orderBy(desc(review.timestamp));
+
+    res.status(200).json({ ...destinationQuery[0], reviewsQuery });
   } catch (error) {
     next(error);
   }

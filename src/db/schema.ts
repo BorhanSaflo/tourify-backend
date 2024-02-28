@@ -21,6 +21,7 @@ export const review = sqliteTable("review", {
   destinationId: integer("destination_id", { mode: "number" }).notNull().references(() => destination.id),
   userId: integer("user_id", { mode: "number" }).notNull().references(() => user.id),
   comment: text("comment"),
+  timestamp: integer("timestamp", { mode: "timestamp" }).notNull().default(sql`CURRENT_DATE`),
 });
 
 export const favorite = sqliteTable("favorite", {
@@ -41,4 +42,5 @@ export const rating = sqliteTable("rating", {
   destinationId: integer("destination_id", { mode: "number" }).notNull().references(() => destination.id),
   userId: integer("user_id", { mode: "number" }).notNull().references(() => user.id),
   like: integer("like", { mode: "boolean" }).notNull(),
+  timestamp: integer("timestamp", { mode: "timestamp" }).notNull().default(sql`CURRENT_DATE`),
 });

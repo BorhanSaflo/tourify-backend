@@ -17,7 +17,7 @@ router.get("/trending", async (req, res, next) => {
         views: count(view.destinationId),
       })
       .from(view)
-      .leftJoin(destination, eq(view.destinationId, destination.id))
+      .innerJoin(destination, eq(view.destinationId, destination.id))
       .where(gte(view.timestamp, oneWeekAgo))
       .groupBy(view.destinationId)
       .orderBy(desc(count(view.destinationId)), destination.id)
@@ -38,7 +38,7 @@ router.get("/most-viewed", async (req, res, next) => {
         views: count(view.destinationId),
       })
       .from(destination)
-      .leftJoin(view, eq(destination.id, view.destinationId))
+      .innerJoin(view, eq(destination.id, view.destinationId))
       .groupBy(destination.id)
       .orderBy(desc(count(view.destinationId)), destination.id)
       .limit(5);
@@ -58,9 +58,9 @@ router.get("/most-liked", async (req, res, next) => {
         likes: count(rating.like),
       })
       .from(destination)
-      .leftJoin(rating, eq(destination.id, rating.destinationId))
+      .innerJoin(rating, eq(destination.id, rating.destinationId))
+      .where(eq(rating.like, true))
       .groupBy(destination.id)
-      .having(eq(count(rating.like), 1))
       .orderBy(desc(count(rating.like)), destination.id)
       .limit(5);
 
