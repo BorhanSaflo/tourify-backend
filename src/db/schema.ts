@@ -13,7 +13,7 @@ export const destination = sqliteTable("destination", {
   name: text("name").notNull(),
   country: text("country").notNull(),
   description: text("description"),
-  photo: text("photo"),
+  googlePlaceId: text("google_place_id"),
 });
 
 export const review = sqliteTable("review", {

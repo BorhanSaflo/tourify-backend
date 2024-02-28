@@ -1,0 +1,1 @@
+ALTER TABLE `destination` RENAME COLUMN `photo` TO `google_place_id`;

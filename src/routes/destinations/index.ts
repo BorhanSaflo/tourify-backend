@@ -2,7 +2,19 @@ import { Router } from "express";
 import { count, desc, eq, gte } from "drizzle-orm";
 import db from "../../db";
 import { destination, rating, view } from "../../db/schema";
+import { getImageUrl, getPlaceId } from "../../utils";
 const router = Router();
+
+const getDestinationImages = async (destinations: any[]) => {
+  return await Promise.all(
+    destinations.map(async (destination) => {
+      const placeId = await getPlaceId(destination.id);
+      if (!placeId) return destination;
+      const thumbnail = await getImageUrl(placeId, 400, 400);
+      return { ...destination, thumbnail };
+    })
+  );
+};
 
 router.get("/trending", async (req, res, next) => {
   const oneWeekAgo = new Date();
@@ -14,6 +26,7 @@ router.get("/trending", async (req, res, next) => {
       .select({
         id: destination.id,
         name: destination.name,
+        country: destination.country,
         views: count(view.destinationId),
       })
       .from(view)
@@ -23,7 +36,9 @@ router.get("/trending", async (req, res, next) => {
       .orderBy(desc(count(view.destinationId)), destination.id)
       .limit(5);
 
-    res.status(200).json(trending);
+    const payload = await getDestinationImages(trending);
+
+    res.status(200).json(payload);
   } catch (error) {
     next(error);
   }
@@ -43,7 +58,9 @@ router.get("/most-viewed", async (req, res, next) => {
       .orderBy(desc(count(view.destinationId)), destination.id)
       .limit(5);
 
-    res.status(200).json(result);
+    const payload = await getDestinationImages(result);
+
+    res.status(200).json(payload);
   } catch (error) {
     next(error);
   }
@@ -64,7 +81,9 @@ router.get("/most-liked", async (req, res, next) => {
       .orderBy(desc(count(rating.like)), destination.id)
       .limit(5);
 
-    res.status(200).json(result);
+    const payload = await getDestinationImages(result);
+
+    res.status(200).json(payload);
   } catch (error) {
     next(error);
   }

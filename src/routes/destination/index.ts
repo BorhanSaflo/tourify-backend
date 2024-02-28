@@ -3,6 +3,7 @@ import { count, desc, eq } from "drizzle-orm";
 import db from "../../db";
 import { destination, review, user } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
+import { getImageUrl, getPlaceId } from "../../utils";
 const router = Router();
 
 router.get("/:id", async (req, res, next) => {
@@ -19,6 +20,7 @@ router.get("/:id", async (req, res, next) => {
         name: destination.name,
         country: destination.country,
         description: destination.description,
+        googlePlaceId: destination.googlePlaceId,
       })
       .from(destination)
       .where(eq(destination.id, id));
@@ -26,6 +28,8 @@ router.get("/:id", async (req, res, next) => {
     if (destinationQuery.length === 0) {
       throw new NotFoundError("Destination not found");
     }
+
+    const destinationResult = destinationQuery[0];
 
     const reviewsQuery = await db
       .select({
@@ -42,7 +46,22 @@ router.get("/:id", async (req, res, next) => {
       .where(eq(review.destinationId, id))
       .orderBy(desc(review.timestamp));
 
-    res.status(200).json({ ...destinationQuery[0], reviewsQuery });
+    let imageUrl = null;
+    let placeId = destinationResult.googlePlaceId;
+
+    if (!placeId) {
+      placeId = await getPlaceId(id);
+      if (placeId) {
+        await db
+          .update(destination)
+          .set({ googlePlaceId: placeId })
+          .where(eq(destination.id, id));
+      }
+    }
+
+    if (placeId) imageUrl = await getImageUrl(placeId);
+
+    res.status(200).json({ ...destinationResult, imageUrl, reviewsQuery });
   } catch (error) {
     next(error);
   }
