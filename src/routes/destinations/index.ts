@@ -34,7 +34,7 @@ router.get("/trending", async (req, res, next) => {
       .where(gte(view.timestamp, oneWeekAgo))
       .groupBy(view.destinationId)
       .orderBy(desc(count(view.destinationId)), destination.id)
-      .limit(5);
+      .limit(10);
 
     const payload = await getDestinationImages(trending);
 
@@ -56,7 +56,7 @@ router.get("/most-viewed", async (req, res, next) => {
       .innerJoin(view, eq(destination.id, view.destinationId))
       .groupBy(destination.id)
       .orderBy(desc(count(view.destinationId)), destination.id)
-      .limit(5);
+      .limit(10);
 
     const payload = await getDestinationImages(result);
 
@@ -79,7 +79,7 @@ router.get("/most-liked", async (req, res, next) => {
       .where(eq(rating.like, true))
       .groupBy(destination.id)
       .orderBy(desc(count(rating.like)), destination.id)
-      .limit(5);
+      .limit(10);
 
     const payload = await getDestinationImages(result);
 

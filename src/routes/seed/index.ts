@@ -1,15 +1,26 @@
 import { Router } from "express";
 import db from "../../db";
 import { destination, rating, review, user, view } from "../../db/schema";
-import { CustomError } from "../../utils/errors";
+import fs from "fs";
+import { sql } from "drizzle-orm";
 const router = Router();
 
 // sample data
 router.put("/", async (req, res, next) => {
   try {
     const users = await db.select().from(user);
+
     if (users.length > 0) {
-      throw new CustomError("Sample data already exists", 400);
+      // delete all data
+      await db.delete(view);
+      await db.delete(rating);
+      await db.delete(review);
+      await db.delete(destination);
+      await db.delete(user);
+
+      // reset autoincrement
+      db.run(sql`DELETE FROM sqlite_sequence`);
+      console.log("All data deleted");
     }
 
     // create users
@@ -21,93 +32,69 @@ router.put("/", async (req, res, next) => {
       { name: "User5", email: "user5@test.com", password: "password" },
     ]);
 
-    // create destinations
-    await db.insert(destination).values([
-      {
-        name: "Paris",
-        country: "France",
-        description: "The city of love",
-      },
-      {
-        name: "Tokyo",
-        country: "Japan",
-        description: "The city of the future",
-      },
-      {
-        name: "New York",
-        country: "USA",
-        description: "The city that never sleeps",
-      },
-      {
-        name: "Sydney",
-        country: "Australia",
-        description: "The land down under",
-      },
-      {
-        name: "London",
-        country: "UK",
-        description: "The city of the queen",
-      },
-    ]);
+    type Destination = {
+      city: string;
+      country: string;
+    };
 
-    // create views
-    await db.insert(view).values([
-      { destinationId: 1, userId: 1 },
-      { destinationId: 1, userId: 2 },
-      { destinationId: 1, userId: 3 },
-      { destinationId: 2, userId: 1 },
-      { destinationId: 2, userId: 2 },
-      { destinationId: 3, userId: 1 },
-      { destinationId: 3, userId: 2 },
-      { destinationId: 3, userId: 3 },
-      { destinationId: 4, userId: 1 },
-      { destinationId: 5, userId: 1 },
-    ]);
+    const destinations: Destination[] = JSON.parse(
+      fs.readFileSync("src/routes/seed/destinations.json", "utf-8")
+    );
 
-    // create ratings
-    await db.insert(rating).values([
-      { destinationId: 1, userId: 1, like: true },
-      { destinationId: 1, userId: 2, like: false },
-      { destinationId: 1, userId: 3, like: true },
-      { destinationId: 1, userId: 4, like: true },
-      { destinationId: 1, userId: 5, like: false },
-      { destinationId: 2, userId: 1, like: true },
-      { destinationId: 2, userId: 2, like: false },
-      { destinationId: 2, userId: 3, like: true },
-      { destinationId: 2, userId: 4, like: true },
-      { destinationId: 2, userId: 5, like: false },
-      { destinationId: 3, userId: 1, like: true },
-      { destinationId: 3, userId: 2, like: true },
-      { destinationId: 3, userId: 3, like: false },
-      { destinationId: 3, userId: 4, like: true },
-      { destinationId: 3, userId: 5, like: true },
-      { destinationId: 4, userId: 1, like: true },
-      { destinationId: 4, userId: 2, like: false },
-      { destinationId: 4, userId: 3, like: true },
-      { destinationId: 4, userId: 4, like: false },
-      { destinationId: 4, userId: 5, like: true },
-      { destinationId: 5, userId: 1, like: true },
-      { destinationId: 5, userId: 2, like: false },
-      { destinationId: 5, userId: 3, like: true },
-      { destinationId: 5, userId: 4, like: true },
-      { destinationId: 5, userId: 5, like: false },
-    ]);
+    // create 20 random users
+    let userList = [];
+    for (let i = 0; i < 20; i++) {
+      userList.push({
+        name: `User${i + 6}`,
+        email: `user${i + 1}`,
+        password: "password",
+      });
+    }
 
-    // create reviews
-    await db.insert(review).values([
-      { destinationId: 1, userId: 1, comment: "Great place" },
-      { destinationId: 1, userId: 2, comment: "Not so great" },
-      { destinationId: 1, userId: 3, comment: "I love it" },
-      { destinationId: 2, userId: 1, comment: "The best" },
-      { destinationId: 2, userId: 2, comment: "Not so good" },
-      { destinationId: 3, userId: 1, comment: "I like it" },
-      { destinationId: 3, userId: 2, comment: "I hate it" },
-      { destinationId: 3, userId: 3, comment: "It's ok" },
-      { destinationId: 4, userId: 1, comment: "I love it" },
-      { destinationId: 5, userId: 1, comment: "I hate it" },
-      { destinationId: 5, userId: 4, comment: "I like it" },
-      { destinationId: 5, userId: 5, comment: "It's ok" },
-    ]);
+    await db.insert(user).values(userList);
+
+    for (let i = 0; i < destinations.length; i++) {
+      const d = destinations[i];
+      const result = await db.insert(destination).values({
+        name: d.city,
+        country: d.country,
+        description: "This is a great place",
+      });
+
+      //select a random number of users
+      const random = Math.floor(Math.random() * 20) + 1;
+
+      for (let j = 0; j < random; j++) {
+        const userId = Math.floor(Math.random() * 25) + 1;
+        const like = Math.random() > 0.5;
+        await db.insert(rating).values({
+          destinationId: i + 1,
+          userId,
+          like,
+        });
+
+        //create reviews
+        if (like) {
+          await db.insert(review).values({
+            destinationId: i + 1,
+            userId,
+            comment: "I love it",
+          });
+        } else {
+          await db.insert(review).values({
+            destinationId: i + 1,
+            userId,
+            comment: "I hate it",
+          });
+        }
+
+        // create views
+        await db.insert(view).values({
+          destinationId: i + 1,
+          userId,
+        });
+      }
+    }
 
     res.send("Sample data created");
   } catch (error) {
