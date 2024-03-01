@@ -1,17 +1,15 @@
 import { Router } from "express";
-import { count, desc, eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import db from "../../db";
 import { destination, review, user } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
-import { getImageUrl, getPlaceId } from "../../utils";
+import { getImageUrls, getPlaceId } from "../../utils";
 const router = Router();
 
 router.get("/:id", async (req, res, next) => {
   const id = parseInt(req.params.id, 10);
 
-  if (isNaN(id)) {
-    throw new NotFoundError("Destination not found");
-  }
+  if (isNaN(id)) throw new NotFoundError("Destination not found");
 
   try {
     const destinationQuery = await db
@@ -25,9 +23,8 @@ router.get("/:id", async (req, res, next) => {
       .from(destination)
       .where(eq(destination.id, id));
 
-    if (destinationQuery.length === 0) {
+    if (destinationQuery.length === 0)
       throw new NotFoundError("Destination not found");
-    }
 
     const destinationResult = destinationQuery[0];
 
@@ -46,7 +43,7 @@ router.get("/:id", async (req, res, next) => {
       .where(eq(review.destinationId, id))
       .orderBy(desc(review.timestamp));
 
-    let imageUrl = null;
+    let images = [];
     let placeId = destinationResult.googlePlaceId;
 
     if (!placeId) {
@@ -59,9 +56,9 @@ router.get("/:id", async (req, res, next) => {
       }
     }
 
-    if (placeId) imageUrl = await getImageUrl(placeId);
+    if (placeId) images = await getImageUrls(placeId);
 
-    res.status(200).json({ ...destinationResult, imageUrl, reviewsQuery });
+    res.status(200).json({ ...destinationResult, images, reviewsQuery });
   } catch (error) {
     next(error);
   }

@@ -60,13 +60,39 @@ export const getImageUrl = async (
 
   const imageName = placeDetails?.photos[0]?.name;
 
-  if (!imageName) {
-    return null;
-  }
+  if (!imageName) return null;
 
   return await fetch(
     `https://places.googleapis.com/v1/${imageName}/media?key=${process.env.GOOGLE_PLACES_API_KEY}&maxWidthPx=${width}&maxHeightPx=${height}&skipHttpRedirect=true`
   )
     .then((res) => res.json())
     .then((res) => res.photoUri);
+};
+
+export const getImageUrls = async (placeId: string) => {
+  const placeDetails = await fetch(
+    `https://places.googleapis.com/v1/places/${placeId}?languageCode=en`,
+    {
+      headers: {
+        "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY!,
+        "X-Goog-FieldMask": "photos",
+      },
+    }
+  ).then((res) => res.json());
+
+  if (!placeDetails.photos) return [];
+
+  const imageUrls = await Promise.all(
+    placeDetails.photos.slice(0, 5).map(async (photo: any) => {
+      const imageName = photo.name;
+
+      return await fetch(
+        `https://places.googleapis.com/v1/${imageName}/media?key=${process.env.GOOGLE_PLACES_API_KEY}&maxWidthPx=800&maxHeightPx=800&skipHttpRedirect=true`
+      )
+        .then((res) => res.json())
+        .then((res) => res.photoUri);
+    })
+  );
+
+  return imageUrls;
 };
