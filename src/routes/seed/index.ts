@@ -23,15 +23,6 @@ router.put("/", async (req, res, next) => {
       console.log("All data deleted");
     }
 
-    // create users
-    await db.insert(user).values([
-      { name: "User1", email: "user1@test.com", password: "password" },
-      { name: "User2", email: "user2@test.com", password: "password" },
-      { name: "User3", email: "user3@test.com", password: "password" },
-      { name: "User4", email: "user4@test.com", password: "password" },
-      { name: "User5", email: "user5@test.com", password: "password" },
-    ]);
-
     type Destination = {
       city: string;
       country: string;
@@ -41,60 +32,53 @@ router.put("/", async (req, res, next) => {
       fs.readFileSync("src/routes/seed/destinations.json", "utf-8")
     );
 
-    // create 20 random users
+    await db.insert(destination).values(
+      destinations.map((destination) => ({
+        name: destination.city,
+        country: destination.country,
+      }))
+    );
+
     let userList = [];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 100; i++) {
       userList.push({
-        name: `User${i + 6}`,
-        email: `user${i + 1}`,
+        name: `User${i + 1}`,
+        email: `user${i + 1}@example.com`,
         password: "password",
       });
     }
 
     await db.insert(user).values(userList);
+    const n = 100
 
-    for (let i = 0; i < destinations.length; i++) {
-      const d = destinations[i];
-      const result = await db.insert(destination).values({
-        name: d.city,
-        country: d.country,
-        description: "This is a great place",
-      });
-
-      //select a random number of users
-      const random = Math.floor(Math.random() * 20) + 1;
-
-      for (let j = 0; j < random; j++) {
-        const userId = Math.floor(Math.random() * 25) + 1;
-        const like = Math.random() > 0.5;
-        await db.insert(rating).values({
-          destinationId: i + 1,
-          userId,
-          like,
-        });
-
-        //create reviews
-        if (like) {
-          await db.insert(review).values({
-            destinationId: i + 1,
-            userId,
-            comment: "I love it",
-          });
-        } else {
-          await db.insert(review).values({
-            destinationId: i + 1,
-            userId,
-            comment: "I hate it",
-          });
-        }
-
-        // create views
-        await db.insert(view).values({
-          destinationId: i + 1,
-          userId,
-        });
-      }
+    const ratings = [];
+    for (let i = 0; i < n; i++) {
+      const destinationId = i + 1;
+      const userId = i + 1;
+      const like = Math.random() > 0.5;
+      ratings.push({ destinationId, userId, like });
     }
+
+    await db.insert(rating).values(ratings);
+
+    const reviews = [];
+    for (let i = 0; i < n; i++) {
+      const destinationId = i + 1;
+      const userId = i + 1;
+      const comment = "This place is awesome!";
+      reviews.push({ destinationId, userId, comment });
+    }
+
+    await db.insert(review).values(reviews);
+
+    const views = [];
+    for (let i = 0; i < n; i++) {
+      const destinationId = i + 1;
+      const userId = i + 1;
+      views.push({ destinationId, userId });
+    }
+
+    await db.insert(view).values(views);
 
     res.send("Sample data created");
   } catch (error) {
