@@ -5,7 +5,7 @@ import { NotFoundError } from "../../utils/errors";
 import { like } from "drizzle-orm";
 const router = Router();
 
-router.get("/search", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   const { query } = req.query;
 
   try {

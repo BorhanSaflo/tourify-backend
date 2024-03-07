@@ -41,9 +41,7 @@ The server uses JWT for authentication. The following endpoints are used for aut
     - **Method**: POST
     - **Description**: Logs out a user by invalidating the JWT token.
 
-4.  **`/api/auth/refresh`**
-         - **Method**: POST
-         - **Description**: Refreshes the JWT token.
+4.  **`/api/auth/refresh`** - **Method**: POST - **Description**: Refreshes the JWT token.
 
 ### Destination
 
@@ -67,12 +65,6 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Method**: GET
    - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, and reviews.
 
-5. **`/api/search`**
-   - **Method**: POST
+5. **`/api/search?query=string`**
+   - **Method**: GET
    - **Description**: Returns a list of destinations (name, country, and description) that match the search query.
-   - **Body**:
-     ```json
-     {
-       "query": "string"
-     }
-     ```
