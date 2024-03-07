@@ -6,7 +6,7 @@ import seed from "./seed";
 import search from "./search";
 const router = Router();
 
-router.use("/", auth);
+router.use("/auth", auth);
 router.use("/destination", destination);
 router.use("/destinations", destinations);
 router.use("/seed", seed);
