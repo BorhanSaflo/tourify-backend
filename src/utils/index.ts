@@ -1,6 +1,7 @@
+import { GOOGLE_PLACES_API_KEY } from "@/config";
 import db from "../db";
-import { destination, rating, view } from "../db/schema";
-import { count, desc, eq, gte } from "drizzle-orm";
+import { destination } from "../db/schema";
+import { eq } from "drizzle-orm";
 
 export const getPlaceId = async (id: number) => {
   const destinationQuery = await db
@@ -23,7 +24,7 @@ export const getPlaceId = async (id: number) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY!,
+        "X-Goog-Api-Key": GOOGLE_PLACES_API_KEY,
         "X-Goog-FieldMask": "places.id",
       },
       body: JSON.stringify({
@@ -52,7 +53,7 @@ export const getImageUrl = async (
     `https://places.googleapis.com/v1/places/${placeId}?languageCode=en`,
     {
       headers: {
-        "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY!,
+        "X-Goog-Api-Key": GOOGLE_PLACES_API_KEY,
         "X-Goog-FieldMask": "photos",
       },
     }
@@ -74,7 +75,7 @@ export const getImageUrls = async (placeId: string) => {
     `https://places.googleapis.com/v1/places/${placeId}?languageCode=en`,
     {
       headers: {
-        "X-Goog-Api-Key": process.env.GOOGLE_PLACES_API_KEY!,
+        "X-Goog-Api-Key": GOOGLE_PLACES_API_KEY,
         "X-Goog-FieldMask": "photos",
       },
     }

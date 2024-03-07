@@ -1,34 +1,35 @@
-import express, { Express } from "express";
-import dotenv from "dotenv";
+import express from "express";
+import bodyParser from "body-parser";
+import cookies from "cookie-parser";
 import routes from "./routes";
 import { rateLimiter } from "./middlewares/rate-limiter";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
 import { errorHandler } from "./middlewares/error-handler";
-import { NotFoundError } from "./utils/errors";
+import { APP_PORT, CORS_ORIGIN } from "./config";
 
-dotenv.config();
-const port = process.env.PORT || 3000;
-const app: Express = express();
+const app = express();
 
-app.use(morgan("dev"));
+app.use(morgan('dev'));
 app.use(helmet());
+app.use(express.json());
+app.use(cookies());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
-  cors({
-    credentials: true,
-    origin: process.env.CORS_ORIGIN || "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  })
+    cors({
+        credentials: true,
+        origin: CORS_ORIGIN,
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    }),
 );
+
 app.use(rateLimiter);
+app.use('/api', routes);
 
-app.use("/api", routes);
-app.get("/", async (req, res) => res.send("Hello World!"));
-
-app.use((req, res, next) => next(new NotFoundError("Not Found")));
 app.use(errorHandler);
 
-app.listen(port as number, "0.0.0.0", () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(APP_PORT, "0.0.0.0", () => {
+  console.log(`Server is running at http://localhost:${APP_PORT}`);
 });

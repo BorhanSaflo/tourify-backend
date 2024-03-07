@@ -5,7 +5,7 @@ export const user = sqliteTable("user", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
   name: text("name").notNull(),
   email: text("email").notNull().unique(),
-  password: text("password").notNull(),
+  passwordHash: text("passwordHash").notNull(),
 });
 
 export const destination = sqliteTable("destination", {

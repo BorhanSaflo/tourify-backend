@@ -46,7 +46,7 @@ router.put("/", async (req, res, next) => {
       userList.push({
         name: `User${i + 1}`,
         email: `user${i + 1}@example.com`,
-        password: "password",
+        passwordHash: "password",
       });
     }
 
