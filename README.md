@@ -6,6 +6,47 @@ This is the backend server for the [Tourify](https://github.com/BorhanSaflo/tour
 
 ## API Endpoints
 
+### Authentication
+
+The server uses JWT for authentication. The following endpoints are used for authentication:
+
+1.  **`/api/auth/register`**
+
+    - **Method**: POST
+    - **Description**: Creates a new user account.
+    - **Body**:
+      ```json
+      {
+        "username": "string",
+        "email": "string",
+        "password": "string"
+      }
+      ```
+
+2.  **`/api/auth/login`**
+
+    - **Method**: POST
+    - **Description**: Logs in a user and returns a JWT token.
+    - **Body**:
+
+    ```json
+    {
+      "email": "string",
+      "password": "string"
+    }
+    ```
+
+3.  **`/api/auth/logout`**
+
+    - **Method**: POST
+    - **Description**: Logs out a user by invalidating the JWT token.
+
+4.  **`/api/auth/refresh`**
+         - **Method**: POST
+         - **Description**: Refreshes the JWT token.
+
+### Destination
+
 1. **`/api/destinations/trending`**
 
    - **Method**: GET
