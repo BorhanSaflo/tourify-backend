@@ -68,3 +68,7 @@ The server uses JWT for authentication. The following endpoints are used for aut
 5. **`/api/search?query=string`**
    - **Method**: GET
    - **Description**: Returns a list of destinations (name, country, and description) that match the search query.
+
+6. **`/api/user/info`**
+   - **Method**: GET
+   - **Description**: Returns the details of the currently logged-in user.
