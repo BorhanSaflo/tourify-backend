@@ -17,7 +17,7 @@ The server uses JWT for authentication. The following endpoints are used for aut
     - **Body**:
       ```json
       {
-        "username": "string",
+        "name": "string",
         "email": "string",
         "password": "string"
       }
