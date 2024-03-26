@@ -4,9 +4,10 @@ import db from "../../db";
 import { destination, review, user } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 import { getImageUrls, getPlaceId } from "../../utils";
+import { authenticateUser } from "@/middlewares/authenticate-user";
 const router = Router();
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", authenticateUser, async (req, res, next) => {
   const id = parseInt(req.params.id, 10);
 
   if (isNaN(id)) throw new NotFoundError("Destination not found");

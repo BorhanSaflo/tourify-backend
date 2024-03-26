@@ -3,6 +3,7 @@ import { count, desc, eq, gte } from "drizzle-orm";
 import db from "../../db";
 import { destination, rating, view } from "../../db/schema";
 import { getImageUrl, getPlaceId } from "../../utils";
+import { authenticateUser } from "@/middlewares/authenticate-user";
 const router = Router();
 
 const getDestinationImages = async (destinations: any[]) => {
@@ -16,7 +17,7 @@ const getDestinationImages = async (destinations: any[]) => {
   );
 };
 
-router.get("/trending", async (req, res, next) => {
+router.get("/trending", authenticateUser, async (req, res, next) => {
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
@@ -44,7 +45,7 @@ router.get("/trending", async (req, res, next) => {
   }
 });
 
-router.get("/most-viewed", async (req, res, next) => {
+router.get("/most-viewed", authenticateUser, async (req, res, next) => {
   try {
     const result = await db
       .select({
@@ -66,7 +67,7 @@ router.get("/most-viewed", async (req, res, next) => {
   }
 });
 
-router.get("/most-liked", async (req, res, next) => {
+router.get("/most-liked", authenticateUser, async (req, res, next) => {
   try {
     const result = await db
       .select({
