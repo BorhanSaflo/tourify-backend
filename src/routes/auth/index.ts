@@ -24,7 +24,13 @@ router.post(
 
       await registerUser(email, password, name);
 
-      res.status(200).send({ message: "Successfully signed up" });
+      //login the user after registration
+      const user = await verifyLogin(email, password);
+      const accessToken = createAccessToken(user.id, user.email, user.name);
+      const refreshToken = createRefreshToken(user.id, user.email, user.name);
+      setRefreshCookie(res, refreshToken);
+
+      res.status(201).send({ accessToken });
     } catch (error) {
       next(error);
     }
