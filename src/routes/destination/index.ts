@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { desc, eq } from "drizzle-orm";
+import { count, desc, eq } from "drizzle-orm";
 import db from "../../db";
-import { destination, review, user } from "../../db/schema";
+import { destination, review, user, view } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
-import { getImageUrls, getPlaceId } from "../../utils";
+import { getImageUrls, getPlaceId, takeUniqueOrThrow } from "../../utils";
 import { authenticateUser } from "@/middlewares/authenticate-user";
 const router = Router();
 
@@ -44,7 +44,7 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
       .where(eq(review.destinationId, id))
       .orderBy(desc(review.timestamp));
 
-    let images = [];
+    let images: string[] = [];
     let placeId = destinationResult.googlePlaceId;
 
     if (!placeId) {
@@ -59,7 +59,32 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
 
     if (placeId) images = await getImageUrls(placeId);
 
-    res.status(200).json({ ...destinationResult, images, reviewsQuery });
+    const likesAndDislikes = await db
+      .select({
+        likes: count(review.id),
+        dislikes: count(review.id),
+      })
+      .from(review)
+      .where(eq(review.destinationId, id))
+      .then(takeUniqueOrThrow);
+
+    const views = await db
+      .select({
+        views: count(review.id),
+      })
+      .from(view)
+      .where(eq(view.destinationId, id))
+      .then(takeUniqueOrThrow);
+
+    res
+      .status(200)
+      .json({
+        ...destinationResult,
+        ...likesAndDislikes,
+        ...views,
+        images,
+        reviewsQuery,
+      });
   } catch (error) {
     next(error);
   }
