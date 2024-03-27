@@ -36,6 +36,7 @@ router.put("/", async (req, res, next) => {
       destinations.map((destination) => ({
         name: destination.city,
         country: destination.country,
+        description: "This is a sample description.",
       }))
     );
 
