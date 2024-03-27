@@ -2,20 +2,9 @@ import { Router } from "express";
 import { count, desc, eq, gte } from "drizzle-orm";
 import db from "../../db";
 import { destination, rating, view } from "../../db/schema";
-import { getImageUrl, getPlaceId } from "../../utils";
+import { getDestinationImages } from "../../utils";
 import { authenticateUser } from "@/middlewares/authenticate-user";
 const router = Router();
-
-const getDestinationImages = async (destinations: any[]) => {
-  return await Promise.all(
-    destinations.map(async (destination) => {
-      const placeId = await getPlaceId(destination.id);
-      if (!placeId) return destination;
-      const thumbnail = await getImageUrl(placeId, 400, 400);
-      return { ...destination, thumbnail };
-    })
-  );
-};
 
 router.get("/trending", authenticateUser, async (req, res, next) => {
   const oneWeekAgo = new Date();

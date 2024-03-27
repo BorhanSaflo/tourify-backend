@@ -103,3 +103,14 @@ export const takeUniqueOrThrow = <T extends any[]>(values: T): T[number] => {
     throw new Error("Found non unique or inexistent value");
   return values[0]!;
 };
+
+export const getDestinationImages = async (destinations: any[]) => {
+  return await Promise.all(
+    destinations.map(async (destination) => {
+      const placeId = await getPlaceId(destination.id);
+      if (!placeId) return destination;
+      const thumbnail = await getImageUrl(placeId, 400, 400);
+      return { ...destination, thumbnail };
+    })
+  );
+};
