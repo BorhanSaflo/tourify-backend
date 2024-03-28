@@ -28,6 +28,7 @@ router.put("/", async (req, res, next) => {
     type Destination = {
       city: string;
       country: string;
+      description: string;
     };
 
     const destinations: Destination[] = JSON.parse(
@@ -38,7 +39,7 @@ router.put("/", async (req, res, next) => {
       destinations.map((destination) => ({
         name: destination.city,
         country: destination.country,
-        description: "This is a sample description.",
+        description: destination.description,
       }))
     );
 
