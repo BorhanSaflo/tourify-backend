@@ -43,6 +43,13 @@
       "when": 1711599502519,
       "tag": "0005_fluffy_mentallo",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1711660444950,
+      "tag": "0006_supreme_ezekiel_stane",
+      "breakpoints": true
     }
   ]
 }

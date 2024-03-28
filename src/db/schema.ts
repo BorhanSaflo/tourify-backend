@@ -1,4 +1,3 @@
-import { sql } from "drizzle-orm";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const user = sqliteTable("user", {
@@ -56,4 +55,10 @@ export const destinationTag = sqliteTable("destination_tag", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
   destinationId: integer("destination_id", { mode: "number" }).notNull().references(() => destination.id),
   tagId: integer("tag_id", { mode: "number" }).notNull().references(() => tag.id)
+});
+
+export const savedDestination = sqliteTable("saved_destination", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  destinationId: integer("destination_id", { mode: "number" }).notNull().references(() => destination.id),
+  userId: integer("user_id", { mode: "number" }).notNull().references(() => user.id),
 });
