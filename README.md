@@ -43,6 +43,12 @@ The server uses JWT for authentication. The following endpoints are used for aut
 
 4.  **`/api/auth/refresh`** - **Method**: POST - **Description**: Refreshes the JWT token.
 
+### User
+
+1. **`/api/user/info`**
+   - **Method**: GET
+   - **Description**: Returns the details of the currently logged-in user.
+
 ### Destination
 
 1. **`/api/destinations/trending`**
@@ -66,9 +72,13 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, and reviews.
 
 5. **`/api/search/:query`**
+
    - **Method**: GET
    - **Description**: Returns a list of destinations (name, country, and description) that match the search query.
 
-6. **`/api/user/info`**
+### Explore
+
+1. **`/api/explore?tags=tag1,tag2,tag3`**
+
    - **Method**: GET
-   - **Description**: Returns the details of the currently logged-in user.
+   - **Description**: Returns a list of destinations that the user might like based on their preferences.
