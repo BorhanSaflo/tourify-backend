@@ -1,6 +1,14 @@
 import { Router } from "express";
 import db from "../../db";
-import { destination, rating, review, tag, user, view, destinationTag } from "../../db/schema";
+import {
+  destination,
+  rating,
+  review,
+  tag,
+  user,
+  view,
+  destinationTag,
+} from "../../db/schema";
 import fs from "fs";
 import { sql } from "drizzle-orm";
 const router = Router();
@@ -8,9 +16,9 @@ const router = Router();
 // sample data
 router.put("/", async (req, res, next) => {
   try {
-    const users = await db.select().from(user);
+    const usersTable = await db.select().from(user);
 
-    if (users.length > 0) {
+    if (usersTable.length > 0) {
       // delete all data
       await db.delete(view);
       await db.delete(rating);
@@ -43,27 +51,54 @@ router.put("/", async (req, res, next) => {
       }))
     );
 
-    const n = 5000;
+    const usersData: any = JSON.parse(
+      fs.readFileSync("src/routes/seed/users.json", "utf-8")
+    );
 
-    let userList = [];
-    for (let i = 0; i < n; i++) {
-      userList.push({
-        name: `User${i + 1}`,
-        email: `user${i + 1}@example.com`,
-        passwordHash: "password",
-      });
-    }
+    const users = usersData.map((user: any) => ({
+      name: user.name,
+      email: `${user.name.replace(" ", "").toLowerCase()}@gmail.com`,
+      passwordHash: "password",
+    }));
 
-    await db.insert(user).values(userList);
+    await db.insert(user).values(users);
+
+    const n = 3000;
 
     const getRandomInt = (num = destinations.length) => {
       return Math.floor(Math.random() * num);
     };
 
+    const reviewsData: any = JSON.parse(
+      fs.readFileSync("src/routes/seed/reviews.json", "utf-8")
+    );
+
+    const reviews: any = [];
+    for (let i = 0; i < n; i++) {
+      const destinationId = getRandomInt() + 1;
+      const userId = getRandomInt(users.length) + 1;
+
+      const existingReview = reviews.find(
+        (review: any) =>
+          review.destinationId === destinationId && review.userId === userId
+      );
+
+      if (existingReview) continue;
+
+      const comment = reviewsData[getRandomInt(reviewsData.length)].review;
+      //random timestamp in the last 30 days
+      const timestamp = new Date(
+        new Date().getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000
+      );
+      reviews.push({ destinationId, userId, comment, timestamp });
+    }
+
+    await db.insert(review).values(reviews);
+
     const ratings: any = [];
     for (let i = 0; i < n; i++) {
       const destinationId = getRandomInt() + 1;
-      const userId = getRandomInt(1000) + 1;
+      const userId = getRandomInt(users.length) + 1;
 
       const existingRating = ratings.find(
         (rating: any) =>
@@ -78,28 +113,10 @@ router.put("/", async (req, res, next) => {
 
     await db.insert(rating).values(ratings);
 
-    const reviews: any = [];
-    for (let i = 0; i < n; i++) {
-      const destinationId = getRandomInt() + 1;
-      const userId = getRandomInt(1000) + 1;
-
-      const existingReview = reviews.find(
-        (review: any) =>
-          review.destinationId === destinationId && review.userId === userId
-      );
-
-      if (existingReview) continue;
-
-      const comment = "This place is awesome!";
-      reviews.push({ destinationId, userId, comment });
-    }
-
-    await db.insert(review).values(reviews);
-
     const views: any = [];
     for (let i = 0; i < n; i++) {
       const destinationId = getRandomInt() + 1;
-      const userId = getRandomInt(1000) + 1;
+      const userId = getRandomInt(users.length) + 1;
 
       const existingView = views.find(
         (view: any) =>
@@ -117,13 +134,23 @@ router.put("/", async (req, res, next) => {
     // Q2: What type of activties: Shopping, sports, Dinning
     // Q3: WHat is your budget range: Low, Medium, High
 
-    const tags = ["Tropical", "Warm", "Cold", "Shopping", "Sports", "Dinning", "Low", "Medium", "High"];
+    const tags = [
+      "Tropical",
+      "Warm",
+      "Cold",
+      "Shopping",
+      "Sports",
+      "Dinning",
+      "Low",
+      "Medium",
+      "High",
+    ];
 
     await db.insert(tag).values(tags.map((name) => ({ name })));
 
     // create destination tags
     const destinationTags: any = [];
-// choose random tags for each destination
+    // choose random tags for each destination
     for (let i = 0; i < destinations.length; i++) {
       const destinationId = i + 1;
       const tagIds: any = [];
