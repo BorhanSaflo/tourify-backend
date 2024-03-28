@@ -49,6 +49,10 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Method**: GET
    - **Description**: Returns the details of the currently logged-in user.
 
+2. **`/api/user/saved`**
+   - **Method**: GET
+   - **Description**: Returns a list of destinations that the user has saved.
+
 ### Destination
 
 1. **`/api/destinations/trending`**
@@ -82,3 +86,10 @@ The server uses JWT for authentication. The following endpoints are used for aut
 
    - **Method**: GET
    - **Description**: Returns a list of destinations that the user might like based on their preferences.
+
+### Save
+
+1. **`/api/save/:id`**
+
+   - **Method**: POST
+   - **Description**: Saves a destination with the specified id to the user's saved list. If the destination is already saved, it is removed from the saved list.
