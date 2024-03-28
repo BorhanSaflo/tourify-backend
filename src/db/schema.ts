@@ -46,3 +46,14 @@ export const rating = sqliteTable("rating", {
   timestamp: integer("timestamp", { mode: "timestamp" }).notNull().$default(() => new Date()),
 
 });
+
+export const tag = sqliteTable("tag", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  name: text("name").notNull().unique(),
+});
+
+export const destinationTag = sqliteTable("destination_tag", {
+  id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
+  destinationId: integer("destination_id", { mode: "number" }).notNull().references(() => destination.id),
+  tagId: integer("tag_id", { mode: "number" }).notNull().references(() => tag.id)
+});

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import db from "../../db";
-import { destination, rating, review, user, view } from "../../db/schema";
+import { destination, rating, review, tag, user, view, destinationTag } from "../../db/schema";
 import fs from "fs";
 import { sql } from "drizzle-orm";
 const router = Router();
@@ -17,6 +17,8 @@ router.put("/", async (req, res, next) => {
       await db.delete(review);
       await db.delete(destination);
       await db.delete(user);
+      await db.delete(tag);
+      await db.delete(destinationTag);
 
       // reset autoincrement
       db.run(sql`DELETE FROM sqlite_sequence`);
@@ -109,6 +111,36 @@ router.put("/", async (req, res, next) => {
     }
 
     await db.insert(view).values(views);
+
+    // Q1: type of climate: Tropical, Warm, Cold
+    // Q2: What type of activties: Shopping, sports, Dinning
+    // Q3: WHat is your budget range: Low, Medium, High
+
+    const tags = ["Tropical", "Warm", "Cold", "Shopping", "Sports", "Dinning", "Low", "Medium", "High"];
+
+    await db.insert(tag).values(tags.map((name) => ({ name })));
+
+    // create destination tags
+    const destinationTags: any = [];
+// choose random tags for each destination
+    for (let i = 0; i < destinations.length; i++) {
+      const destinationId = i + 1;
+      const tagIds: any = [];
+
+      for (let j = 0; j < 3; j++) {
+        const tagId = getRandomInt(tags.length) + 1;
+
+        if (tagIds.includes(tagId)) continue;
+
+        tagIds.push(tagId);
+      }
+
+      destinationTags.push(
+        ...tagIds.map((tagId: any) => ({ destinationId, tagId }))
+      );
+    }
+
+    await db.insert(destinationTag).values(destinationTags);
 
     res.send("Sample data created");
   } catch (error) {

@@ -16,7 +16,6 @@ router.get("/trending", authenticateUser, async (req, res, next) => {
       .select({
         id: destination.id,
         name: destination.name,
-        country: destination.country,
         views: count(view.destinationId),
       })
       .from(view)
