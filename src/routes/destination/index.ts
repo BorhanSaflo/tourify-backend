@@ -1,7 +1,7 @@
-import { Router } from "express";
-import { count, desc, eq } from "drizzle-orm";
+import { NextFunction, Request, Response, Router } from "express";
+import { and, count, desc, eq } from "drizzle-orm";
 import db from "../../db";
-import { destination, review, user, view } from "../../db/schema";
+import { destination, rating, review, user, view } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 import { getImageUrls, getPlaceId, takeUniqueOrThrow } from "../../utils";
 import { authenticateUser } from "@/middlewares/authenticate-user";
@@ -59,35 +59,120 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
 
     if (placeId) images = await getImageUrls(placeId);
 
-    const likesAndDislikes = await db
-      .select({
-        likes: count(review.id),
-        dislikes: count(review.id),
-      })
-      .from(review)
-      .where(eq(review.destinationId, id))
-      .then(takeUniqueOrThrow);
+    const [likes, dislikes, views] = await Promise.all([
+      db
+        .select({
+          likes: count(rating.id),
+        })
+        .from(rating)
+        .where(and(eq(rating.destinationId, id), eq(rating.like, true)))
+        .then(takeUniqueOrThrow),
+      db
+        .select({
+          dislikes: count(rating.id),
+        })
+        .from(rating)
+        .where(and(eq(rating.destinationId, id), eq(rating.like, false)))
+        .then(takeUniqueOrThrow),
+      db
+        .select({
+          views: count(view.id),
+        })
+        .from(view)
+        .where(eq(view.destinationId, id))
+        .then(takeUniqueOrThrow),
+    ]);
 
-    const views = await db
-      .select({
-        views: count(review.id),
-      })
-      .from(view)
-      .where(eq(view.destinationId, id))
-      .then(takeUniqueOrThrow);
-
-    res
-      .status(200)
-      .json({
-        ...destinationResult,
-        ...likesAndDislikes,
-        ...views,
-        images,
-        reviewsQuery,
-      });
+    res.status(200).json({
+      ...destinationResult,
+      ...views,
+      ...likes,
+      ...dislikes,
+      images,
+      reviewsQuery,
+    });
   } catch (error) {
     next(error);
   }
 });
+
+async function handleRating(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+  like: boolean
+) {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const userId = req.user.id;
+
+    if (isNaN(id)) throw new NotFoundError("Destination not found.");
+
+    const destinationQuery = await db
+      .select()
+      .from(destination)
+      .where(eq(destination.id, id));
+
+    if (destinationQuery.length === 0)
+      throw new NotFoundError("Destination not found.");
+
+    const existingRating = await db
+      .select()
+      .from(rating)
+      .where(and(eq(rating.destinationId, id), eq(rating.userId, userId)));
+
+    if (existingRating.length > 0) {
+      // Toggle like or dislike based on the current state and the action
+      const shouldDelete =
+        (existingRating[0].like && like) || (!existingRating[0].like && !like);
+      if (shouldDelete) {
+        await db
+          .delete(rating)
+          .where(and(eq(rating.destinationId, id), eq(rating.userId, userId)));
+
+        res.status(200).json({
+          message: `Your ${
+            like ? "like" : "dislike"
+          } has been removed successfully.`,
+        });
+        return;
+      } else {
+        await db
+          .update(rating)
+          .set({ like })
+          .where(and(eq(rating.destinationId, id), eq(rating.userId, userId)));
+
+        res.status(200).json({
+          message: `You have successfully ${
+            like ? "liked" : "disliked"
+          } this destination.`,
+        });
+        return;
+      }
+    }
+
+    await db.insert(rating).values({
+      destinationId: id,
+      userId,
+      like,
+    });
+
+    res.status(200).json({
+      message: `You have successfully ${
+        like ? "liked" : "disliked"
+      } this destination.`,
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+router.post("/:id/like", authenticateUser, (req, res, next) =>
+  handleRating(req, res, next, true)
+);
+
+router.post("/:id/dislike", authenticateUser, (req, res, next) =>
+  handleRating(req, res, next, false)
+);
 
 export default router;
