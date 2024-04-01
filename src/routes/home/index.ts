@@ -7,7 +7,7 @@ import { authenticateUser } from "@/middlewares/authenticate-user";
 import { NotFoundError } from "@/utils/errors";
 const router = Router();
 
-router.get("/featured", async (req, res, next) => {
+router.get("/featured", authenticateUser, async (req, res, next) => {
   try {
     const destinationCountQuery = await db
       .select({
