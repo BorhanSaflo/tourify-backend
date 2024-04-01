@@ -6,6 +6,40 @@ import { getDestinationImages } from "../../utils";
 import { authenticateUser } from "@/middlewares/authenticate-user";
 const router = Router();
 
+router.get("/featured", async (req, res, next) => {
+  try {
+    const destinationCountQuery = await db
+      .select({
+        count: count(destination.id),
+      })
+      .from(destination);
+
+    const destinationCount = destinationCountQuery[0].count;
+
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    const seed = (day + month + year) % destinationCount;
+
+    const result = await db
+      .select({
+        id: destination.id,
+        name: destination.name,
+      })
+      .from(destination)
+      .limit(1)
+      .offset(seed);
+
+    const payload = await getDestinationImages(result);
+
+    res.status(200).json(payload);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/trending", authenticateUser, async (req, res, next) => {
   const oneWeekAgo = new Date();
   oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
