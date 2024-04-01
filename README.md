@@ -43,9 +43,32 @@ The server uses JWT for authentication. The following endpoints are used for aut
 
 4.  **`/api/auth/refresh`** - **Method**: POST - **Description**: Refreshes the JWT token.
 
+### Destination
+
+1. **`/api/destination/:id`**
+
+   - **Method**: GET
+   - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, and reviews.
+
+2. **`/api/destination/:id/like`**
+
+   - **Method**: POST
+   - **Description**: Likes a destination with the specified id. If the destination is already liked by the user, the like will be removed.
+
+3. **`/api/destination/:id/dislike`**
+
+   - **Method**: POST
+   - **Description**: Dislikes a destination with the specified id. If the destination is already disliked by the user, the dislike will be removed.
+
+4. **`/api/destination/:id/save`**
+
+   - **Method**: POST
+   - **Description**: Saves a destination with the specified id. If the destination is already saved by the user, the save will be removed.
+
 ### User
 
 1. **`/api/user/info`**
+
    - **Method**: GET
    - **Description**: Returns the details of the currently logged-in user.
 
@@ -53,7 +76,7 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Method**: GET
    - **Description**: Returns a list of destinations that the user has saved.
 
-### Destination
+### Home
 
 1. **`/api/destinations/trending`**
 
@@ -70,12 +93,9 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Method**: GET
    - **Description**: Returns a list of the most viewed destinations.
 
-4. **`/api/destination/:id`**
+### Search
 
-   - **Method**: GET
-   - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, and reviews.
-
-5. **`/api/search/:query`**
+1. **`/api/search/:query`**
 
    - **Method**: GET
    - **Description**: Returns a list of destinations (name, country, and description) that match the search query.
@@ -86,10 +106,3 @@ The server uses JWT for authentication. The following endpoints are used for aut
 
    - **Method**: GET
    - **Description**: Returns a list of destinations that the user might like based on their preferences.
-
-### Save
-
-1. **`/api/save/:id`**
-
-   - **Method**: POST
-   - **Description**: Saves a destination with the specified id to the user's saved list. If the destination is already saved, it is removed from the saved list.
