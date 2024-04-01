@@ -4,6 +4,7 @@ import db from "../../db";
 import { destination, rating, view } from "../../db/schema";
 import { getDestinationImages } from "../../utils";
 import { authenticateUser } from "@/middlewares/authenticate-user";
+import { NotFoundError } from "@/utils/errors";
 const router = Router();
 
 router.get("/featured", async (req, res, next) => {
@@ -13,6 +14,10 @@ router.get("/featured", async (req, res, next) => {
         count: count(destination.id),
       })
       .from(destination);
+
+    if (destinationCountQuery.length === 0) {
+      throw new NotFoundError("No destinations found");
+    }
 
     const destinationCount = destinationCountQuery[0].count;
 
@@ -27,6 +32,7 @@ router.get("/featured", async (req, res, next) => {
       .select({
         id: destination.id,
         name: destination.name,
+        country: destination.country,
       })
       .from(destination)
       .limit(1)
@@ -34,7 +40,7 @@ router.get("/featured", async (req, res, next) => {
 
     const payload = await getDestinationImages(result);
 
-    res.status(200).json(payload);
+    res.status(200).json(payload[0]);
   } catch (error) {
     next(error);
   }
