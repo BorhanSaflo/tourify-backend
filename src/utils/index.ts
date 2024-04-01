@@ -59,7 +59,9 @@ export const getImageUrl = async (
     }
   ).then((res) => res.json());
 
-  const imageName = placeDetails?.photos[0]?.name;
+  if (!placeDetails.photos) return null;
+
+  const imageName = placeDetails.photos[0].name;
 
   if (!imageName) return null;
 

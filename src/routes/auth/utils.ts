@@ -25,7 +25,7 @@ export const verifyToken = (token: string) => {
       name: string;
     };
   } catch {
-    throw new UnauthorizedError("Invalid token");
+    throw new UnauthorizedError("Invalid access token.");
   }
 };
 
