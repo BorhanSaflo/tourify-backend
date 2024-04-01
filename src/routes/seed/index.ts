@@ -42,12 +42,14 @@ router.put("/", async (req, res, next) => {
     const destinations: Destination[] = JSON.parse(
       fs.readFileSync("src/routes/seed/destinations.json", "utf-8")
     );
-
     await db.insert(destination).values(
       destinations.map((destination) => ({
         name: destination.city,
         country: destination.country,
         description: destination.description,
+        timestamp: new Date(
+          new Date().getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000
+        ),
       }))
     );
 
@@ -125,7 +127,13 @@ router.put("/", async (req, res, next) => {
 
       if (existingView) continue;
 
-      views.push({ destinationId, userId });
+      views.push({
+        destinationId,
+        userId,
+        timestamp: new Date(
+          new Date().getTime() - Math.random() * 30 * 24 * 60 * 60 * 1000
+        ),
+      });
     }
 
     await db.insert(view).values(views);
