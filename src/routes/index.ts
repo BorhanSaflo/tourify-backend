@@ -6,7 +6,6 @@ import seed from "./seed";
 import search from "./search";
 import user from "./user";
 import explore from "./explore";
-import save from "./save";
 const router = Router();
 
 router.use("/auth", auth);
@@ -16,6 +15,5 @@ router.use("/seed", seed);
 router.use("/search", search);
 router.use("/user", user);
 router.use("/explore", explore);
-router.use("/save", save);
 
 export default router;
