@@ -16,9 +16,10 @@ const router = Router();
 
 router.get("/:id", authenticateUser, async (req, res, next) => {
   try {
-    const id = parseInt(req.params.id, 10);
+    const destinationId = parseInt(req.params.id, 10);
+    const userId = req.user.id;
 
-    if (isNaN(id)) throw new NotFoundError("Invalid destination ID");
+    if (isNaN(destinationId)) throw new NotFoundError("Invalid destination ID");
 
     const destinationQuery = await db
       .select({
@@ -29,10 +30,16 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
         googlePlaceId: destination.googlePlaceId,
       })
       .from(destination)
-      .where(eq(destination.id, id));
+      .where(eq(destination.id, destinationId));
 
     if (destinationQuery.length === 0)
       throw new NotFoundError("Destination not found");
+
+    //Add view to the destination
+    await db.insert(view).values({
+      destinationId,
+      userId,
+    });
 
     const destinationResult = destinationQuery[0];
 
@@ -48,19 +55,19 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
       })
       .from(review)
       .innerJoin(user, eq(review.userId, user.id))
-      .where(eq(review.destinationId, id))
+      .where(eq(review.destinationId, destinationId))
       .orderBy(desc(review.timestamp));
 
     let images: string[] = [];
     let placeId = destinationResult.googlePlaceId;
 
     if (!placeId) {
-      placeId = await getPlaceId(id);
+      placeId = await getPlaceId(destinationId);
       if (placeId) {
         await db
           .update(destination)
           .set({ googlePlaceId: placeId })
-          .where(eq(destination.id, id));
+          .where(eq(destination.id, destinationId));
       }
     }
 
@@ -72,21 +79,25 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
           likes: count(rating.id),
         })
         .from(rating)
-        .where(and(eq(rating.destinationId, id), eq(rating.like, true)))
+        .where(
+          and(eq(rating.destinationId, destinationId), eq(rating.like, true))
+        )
         .then(takeUniqueOrThrow),
       db
         .select({
           dislikes: count(rating.id),
         })
         .from(rating)
-        .where(and(eq(rating.destinationId, id), eq(rating.like, false)))
+        .where(
+          and(eq(rating.destinationId, destinationId), eq(rating.like, false))
+        )
         .then(takeUniqueOrThrow),
       db
         .select({
           views: count(view.id),
         })
         .from(view)
-        .where(eq(view.destinationId, id))
+        .where(eq(view.destinationId, destinationId))
         .then(takeUniqueOrThrow),
     ]);
 
