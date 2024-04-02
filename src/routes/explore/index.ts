@@ -4,10 +4,11 @@ import { destination, destinationTag, tag } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 import { count, desc, eq, inArray, sql } from "drizzle-orm";
 import { getDestinationImages } from "@/utils";
+import { authenticateUser } from "@/middlewares/authenticate-user";
 
 const router = Router();
 
-router.get("/", async (req, res, next) => {
+router.get("/", authenticateUser, async (req, res, next) => {
   try {
     const tagsQuery = req.query.tags as string;
     const tags = tagsQuery.split(",").map((tag) => tag.trim().toLowerCase());

@@ -36,6 +36,11 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
       throw new NotFoundError("Destination not found");
 
     //Add view to the destination
+    const userExists = await db.select().from(user).where(eq(user.id, userId));
+
+    if (userExists.length === 0)
+      throw new NotFoundError("User was not found, cannot add view");
+
     await db.insert(view).values({
       destinationId,
       userId,
