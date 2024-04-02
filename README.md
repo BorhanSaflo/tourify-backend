@@ -48,7 +48,7 @@ The server uses JWT for authentication. The following endpoints are used for aut
 1. **`/api/destination/:id`**
 
    - **Method**: GET
-   - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, and reviews.
+   - **Description**: Returns the details of a destination with the specified id. The details include the destination's name, country, description, images, likes, dislikes, isLiked, isDisliked, isSaved, and reviews.
 
 1. **`/api/destination/:id/like`**
 
@@ -73,8 +73,18 @@ The server uses JWT for authentication. The following endpoints are used for aut
    - **Description**: Returns the details of the currently logged-in user.
 
 1. **`/api/user/saved`**
+
    - **Method**: GET
    - **Description**: Returns a list of destinations that the user has saved.
+
+1. **`/api/user/liked`**
+
+   - **Method**: GET
+   - **Description**: Returns a list of destinations that the user has liked.
+
+1. **`/api/user/disliked`**
+   - **Method**: GET
+   - **Description**: Returns a list of destinations that the user has disliked.
 
 ### Home
 
