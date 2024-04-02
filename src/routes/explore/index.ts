@@ -3,6 +3,7 @@ import db from "../../db";
 import { destination, destinationTag, tag } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 import { count, desc, eq, inArray, sql } from "drizzle-orm";
+import { getDestinationImages } from "@/utils";
 
 const router = Router();
 
@@ -39,7 +40,9 @@ router.get("/", async (req, res, next) => {
       );
     }
 
-    res.json(destinationsWithMostTags);
+    const payload = await getDestinationImages(destinationsWithMostTags);
+
+    res.status(200).json(payload);
   } catch (error) {
     next(error);
   }
