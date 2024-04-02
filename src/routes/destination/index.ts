@@ -73,7 +73,7 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
 
     if (placeId) images = await getImageUrls(placeId);
 
-    const [likes, dislikes, views, isLiked, isDisliked] = await Promise.all([
+    const [likes, dislikes, views, isLiked, isDisliked, isSaved] = await Promise.all([
       db
         .select({
           likes: count(rating.id),
@@ -121,6 +121,16 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
           )
         )
         .then((result) => result.length > 0),
+      db
+        .select()
+        .from(savedDestination)
+        .where(
+          and(
+            eq(savedDestination.destinationId, destinationId),
+            eq(savedDestination.userId, userId)
+          )
+        )
+        .then((result) => result.length > 0),
     ]);
 
     res.status(200).json({
@@ -130,6 +140,7 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
       ...dislikes,
       isLiked,
       isDisliked,
+      isSaved,
       images,
       reviewsQuery,
     });
