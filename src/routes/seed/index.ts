@@ -37,6 +37,7 @@ router.put("/", async (req, res, next) => {
       city: string;
       country: string;
       description: string;
+      tags: string[];
     };
 
     const destinations: Destination[] = JSON.parse(
@@ -52,6 +53,44 @@ router.put("/", async (req, res, next) => {
         ),
       }))
     );
+
+    const tags = [
+      "Tropical",
+      "Warm",
+      "Cold",
+      "Shopping",
+      "Sports",
+      "Dinning",
+      "Low",
+      "Medium",
+      "High",
+      "Car",
+      "Bus",
+      "Train",
+      "Museums",
+      "Parks",
+      "Beaches",
+    ];
+
+    await db.insert(tag).values(tags.map((name) => ({ name })));
+
+    const destinationTags: any = [];
+    for (let i = 0; i < destinations.length; i++) {
+      const destinationId = i + 1;
+      const destination = destinations[i];
+      const destinationTagsNames = destination.tags;
+
+      // check if each tag exists
+      for (let j = 0; j < destinationTagsNames.length; j++) {
+        const tagId = tags.findIndex((tag) => tag === destinationTagsNames[j]);
+
+        if (tagId === -1) continue;
+
+        destinationTags.push({ destinationId, tagId: tagId + 1 });
+      }
+    }
+
+    await db.insert(destinationTag).values(destinationTags);
 
     const usersData: any = JSON.parse(
       fs.readFileSync("src/routes/seed/users.json", "utf-8")
@@ -137,46 +176,6 @@ router.put("/", async (req, res, next) => {
     }
 
     await db.insert(view).values(views);
-
-    // Q1: type of climate: Tropical, Warm, Cold
-    // Q2: What type of activties: Shopping, sports, Dinning
-    // Q3: WHat is your budget range: Low, Medium, High
-
-    const tags = [
-      "Tropical",
-      "Warm",
-      "Cold",
-      "Shopping",
-      "Sports",
-      "Dinning",
-      "Low",
-      "Medium",
-      "High",
-    ];
-
-    await db.insert(tag).values(tags.map((name) => ({ name })));
-
-    // create destination tags
-    const destinationTags: any = [];
-    // choose random tags for each destination
-    for (let i = 0; i < destinations.length; i++) {
-      const destinationId = i + 1;
-      const tagIds: any = [];
-
-      for (let j = 0; j < 3; j++) {
-        const tagId = getRandomInt(tags.length) + 1;
-
-        if (tagIds.includes(tagId)) continue;
-
-        tagIds.push(tagId);
-      }
-
-      destinationTags.push(
-        ...tagIds.map((tagId: any) => ({ destinationId, tagId }))
-      );
-    }
-
-    await db.insert(destinationTag).values(destinationTags);
 
     res.send("Sample data created");
   } catch (error) {

@@ -2,8 +2,7 @@ import { Router } from "express";
 import db from "../../db";
 import { destination, destinationTag, tag } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
-import { eq, inArray, sql } from "drizzle-orm";
-import { getDestinationImages } from "@/utils";
+import { count, desc, eq, inArray, sql } from "drizzle-orm";
 
 const router = Router();
 
@@ -24,21 +23,15 @@ router.get("/", async (req, res, next) => {
         description: destination.description,
       })
       .from(destination)
-      .innerJoin(
+      .leftJoin(
         destinationTag,
         eq(destination.id, destinationTag.destinationId)
       )
-      .innerJoin(tag, eq(destinationTag.tagId, tag.id))
-      .where(
-        inArray(
-          sql`LOWER(${tag.name})`,
-          tags.map((tag) => tag.toLowerCase())
-        )
-      )
+      .leftJoin(tag, eq(destinationTag.tagId, tag.id))
+      .where(inArray(sql`LOWER(tag.name)`, tags))
       .groupBy(destination.id)
-      .orderBy(sql`COUNT(${destinationTag.tagId}) DESC`)
-      .limit(5)
-      .execute();
+      .orderBy(desc(count(tag.id)))
+      .limit(5);
 
     if (destinationsWithMostTags.length === 0) {
       throw new NotFoundError(
@@ -46,9 +39,7 @@ router.get("/", async (req, res, next) => {
       );
     }
 
-    const payload = await getDestinationImages(destinationsWithMostTags);
-
-    res.json(payload);
+    res.json(destinationsWithMostTags);
   } catch (error) {
     next(error);
   }

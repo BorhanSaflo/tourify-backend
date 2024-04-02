@@ -2,696 +2,835 @@
   {
     "city": "Hong Kong",
     "country": "Hong Kong",
-    "description": "Experience the vibrant blend of East and West in Hong Kong, a bustling city known for its impressive skyline, lively markets, and lush green spaces. Don't miss the iconic Star Ferry ride for breathtaking views of Victoria Harbour."
+    "description": "Experience the vibrant blend of East and West in Hong Kong, a bustling city known for its impressive skyline, lively markets, and lush green spaces. Don't miss the iconic Star Ferry ride for breathtaking views of Victoria Harbour.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Parks"]
   },
   {
     "city": "Bangkok",
     "country": "Thailand",
-    "description": "Bangkok, Thailand's pulsating capital, offers a unique mix of historic temples, bustling street markets, and a vibrant nightlife. The Grand Palace and Wat Pho stand as testaments to the city's rich cultural heritage."
+    "description": "Bangkok, Thailand's pulsating capital, offers a unique mix of historic temples, bustling street markets, and a vibrant nightlife. The Grand Palace and Wat Pho stand as testaments to the city's rich cultural heritage.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Temples"]
   },
   {
     "city": "London",
     "country": "United Kingdom",
-    "description": "Discover the historic charm and modern dynamism of London. From the iconic Big Ben and the London Eye to the cultural treasures within the British Museum, London offers an unforgettable journey through history and innovation."
+    "description": "Discover the historic charm and modern dynamism of London. From the iconic Big Ben and the London Eye to the cultural treasures within the British Museum, London offers an unforgettable journey through history and innovation.",
+    "tags": ["Cold", "Museums", "High", "Bus", "Museums"]
   },
   {
     "city": "Macau",
     "country": "Macau",
-    "description": "Macau, known as the 'Vegas of China,' is famed for its gigantic casinos and extravagant entertainment. However, its Portuguese heritage also offers a fascinating blend of cultures through its architecture, cuisine, and festivals."
+    "description": "Macau, known as the 'Vegas of China,' is famed for its gigantic casinos and extravagant entertainment. However, its Portuguese heritage also offers a fascinating blend of cultures through its architecture, cuisine, and festivals.",
+    "tags": ["Warm", "Shopping", "High", "Bus", "Beaches"]
   },
   {
     "city": "Singapore",
     "country": "Singapore",
-    "description": "Singapore, a futuristic city-state, dazzles with its skyscrapers, lush gardens, and multicultural districts. Explore the futuristic Gardens by the Bay, the vibrant streets of Little India, and the picturesque Marina Bay Sands."
+    "description": "Singapore, a futuristic city-state, dazzles with its skyscrapers, lush gardens, and multicultural districts. Explore the futuristic Gardens by the Bay, the vibrant streets of Little India, and the picturesque Marina Bay Sands.",
+    "tags": ["Warm", "Dinning", "High", "Train", "Parks"]
   },
   {
     "city": "Paris",
     "country": "France",
-    "description": "Paris, the city of love and lights, enchants with its timeless beauty, from the magnificent Eiffel Tower to the artistic treasures of the Louvre. Stroll along the Seine, explore charming neighborhoods, and savor exquisite French cuisine."
+    "description": "Paris, the city of love and lights, enchants with its timeless beauty, from the magnificent Eiffel Tower to the artistic treasures of the Louvre. Stroll along the Seine, explore charming neighborhoods, and savor exquisite French cuisine.",
+    "tags": ["Cold", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Dubai",
     "country": "United Arab Emirates",
-    "description": "Dubai is a city of superlatives, boasting the tallest building in the world, sprawling shopping malls, and luxurious resorts. Experience the magic of the desert, the excitement of its theme parks, and the splendor of its modern architecture."
+    "description": "Dubai is a city of superlatives, boasting the tallest building in the world, sprawling shopping malls, and luxurious resorts. Experience the magic of the desert, the excitement of its theme parks, and the splendor of its modern architecture.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Beaches"]
   },
   {
     "city": "New York City",
     "country": "United States",
-    "description": "New York City, the city that never sleeps, offers an exhilarating mix of culture, history, and gastronomy. From the towering Statue of Liberty to the bustling Times Square and the serene Central Park, NYC is truly a city of dreams."
+    "description": "New York City, the city that never sleeps, offers an exhilarating mix of culture, history, and gastronomy. From the towering Statue of Liberty to the bustling Times Square and the serene Central Park, NYC is truly a city of dreams.",
+    "tags": ["Cold", "Shopping", "High", "Train", "Parks"]
   },
   {
     "city": "Kuala Lumpur",
     "country": "Malaysia",
-    "description": "Kuala Lumpur, a melting pot of cultures, is known for its towering skyscrapers, colorful street markets, and colonial architecture. The iconic Petronas Twin Towers and the vibrant Jalan Alor food street are must-visits."
+    "description": "Kuala Lumpur, a melting pot of cultures, is known for its towering skyscrapers, colorful street markets, and colonial architecture. The iconic Petronas Twin Towers and the vibrant Jalan Alor food street are must-visits.",
+    "tags": ["Warm", "Shopping", "Medium", "Train", "Museums"]
   },
   {
     "city": "Istanbul",
     "country": "Turkey",
-    "description": "Straddling two continents, Istanbul mesmerizes with its historical sites, such as the Hagia Sophia and the Blue Mosque, and its bustling Grand Bazaar. Experience the seamless blend of ancient and modern in Turkey's cultural heart."
+    "description": "Straddling two continents, Istanbul mesmerizes with its historical sites, such as the Hagia Sophia and the Blue Mosque, and its bustling Grand Bazaar. Experience the seamless blend of ancient and modern in Turkey's cultural heart.",
+    "tags": ["Warm", "Shopping", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Delhi",
     "country": "India",
-    "description": "Delhi, India's capital, is a city steeped in history, offering a tapestry of magnificent forts, mosques, and monuments, alongside bustling markets and culinary delights. The Red Fort and India Gate are symbols of the nation's rich past and vibrant present."
+    "description": "Delhi, India's capital, is a city steeped in history, offering a tapestry of magnificent forts, mosques, and monuments, alongside bustling markets and culinary delights. The Red Fort and India Gate are symbols of the nation's rich past and vibrant present.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Museums"]
   },
   {
     "city": "Antalya",
     "country": "Turkey",
-    "description": "Antalya, the turquoise coast's jewel, is famous for its historic ruins, stunning beaches, and the dramatic Taurus Mountains. Explore the charming old town, Kaleiçi, with its narrow cobbled streets leading to ancient Roman harbors."
+    "description": "Antalya, the turquoise coast's jewel, is famous for its historic ruins, stunning beaches, and the dramatic Taurus Mountains. Explore the charming old town, Kaleiçi, with its narrow cobbled streets leading to ancient Roman harbors.",
+    "tags": ["Warm", "Sports", "Medium", "Car", "Beaches"]
   },
   {
     "city": "Shenzhen",
     "country": "China",
-    "description": "Shenzhen, a modern metropolis that links Hong Kong to China's mainland, is known for its innovative technology scene, lush parks, and vibrant nightlife. Don't miss the Window of the World, a park featuring global landmarks."
+    "description": "Shenzhen, a modern metropolis that links Hong Kong to China's mainland, is known for its innovative technology scene, lush parks, and vibrant nightlife. Don't miss the Window of the World, a park featuring global landmarks.",
+    "tags": ["Warm", "Shopping", "Medium", "Train", "Parks"]
   },
   {
     "city": "Mumbai",
     "country": "India",
-    "description": "Mumbai, the gateway to India, is a bustling metropolis famed for its Bollywood film industry, historic landmarks, and the iconic Marine Drive. Explore the colonial architecture of the Chhatrapati Shivaji Terminus and the Gateway of India."
+    "description": "Mumbai, the gateway to India, is a bustling metropolis famed for its Bollywood film industry, historic landmarks, and the iconic Marine Drive. Explore the colonial architecture of the Chhatrapati Shivaji Terminus and the Gateway of India.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Beaches"]
   },
   {
     "city": "Phuket",
     "country": "Thailand",
-    "description": "Phuket is Thailand's largest island, a paradise of golden beaches, turquoise waters, and vibrant nightlife. Explore the serene temples, enjoy water sports, and experience the famous Phuket nightlife in Patong Beach."
+    "description": "Phuket is Thailand's largest island, a paradise of golden beaches, turquoise waters, and vibrant nightlife. Explore the serene temples, enjoy water sports, and experience the famous Phuket nightlife in Patong Beach.",
+    "tags": ["Warm", "Sports", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Rome",
     "country": "Italy",
-    "description": "Rome, the Eternal City, is a treasure trove of ancient history, art, and culture. From the majestic Colosseum to the Vatican City, Rome offers a journey back in time to the heart of the ancient Roman Empire."
+    "description": "Rome, the Eternal City, is a treasure trove of ancient history, art, and culture. From the majestic Colosseum to the Vatican City, Rome offers a journey back in time to the heart of the ancient Roman Empire.",
+    "tags": ["Warm", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Tokyo",
     "country": "Japan",
-    "description": "Tokyo, a city where tradition meets futurism, offers a unique blend of historic temples, cutting-edge technology, and vibrant pop culture. Explore the serene Meiji Shrine, the bustling Shibuya Crossing, and the innovative teamLab Borderless museum."
+    "description": "Tokyo, a city where tradition meets futurism, offers a unique blend of historic temples, cutting-edge technology, and vibrant pop culture. Explore the serene Meiji Shrine, the bustling Shibuya Crossing, and the innovative teamLab Borderless museum.",
+    "tags": ["Warm", "Shopping", "High", "Train", "Museums"]
   },
   {
     "city": "Pattaya",
     "country": "Thailand",
-    "description": "Pattaya, a beach resort city, is known for its stunning beaches, water sports, and lively entertainment scene. Discover the Walking Street with its plethora of bars, restaurants, and nightclubs for an unforgettable nightlife experience."
+    "description": "Pattaya, a beach resort city, is known for its stunning beaches, water sports, and lively entertainment scene. Discover the Walking Street with its plethora of bars, restaurants, and nightclubs for an unforgettable nightlife experience.",
+    "tags": ["Warm", "Sports", "Low", "Bus", "Beaches"]
   },
   {
     "city": "Taipei",
     "country": "Taiwan",
-    "description": "Taipei, a city of warm hospitality, offers a fascinating mix of Chinese culture, modernity, and tasty street food. The Taipei 101 tower and the historic temples of Longshan and Baoan are among its must-see attractions."
+    "description": "Taipei, a city of warm hospitality, offers a fascinating mix of Chinese culture, modernity, and tasty street food. The Taipei 101 tower and the historic temples of Longshan and Baoan are among its must-see attractions.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Museums"]
   },
   {
     "city": "Mecca",
     "country": "Saudi Arabia",
-    "description": "Mecca, the holiest city for Muslims, is the birthplace of the Prophet Muhammad and the site of the Kaaba in the Grand Mosque. Millions of pilgrims visit annually during the Hajj period, making it a city of immense religious significance."
+    "description": "Mecca, the holiest city for Muslims, is the birthplace of the Prophet Muhammad and the site of the Kaaba in the Grand Mosque. Millions of pilgrims visit annually during the Hajj period, making it a city of immense religious significance.",
+    "tags": ["Warm", "Sports", "High", "Bus", "Museums"]
   },
   {
     "city": "Guangzhou",
     "country": "China",
-    "description": "Guangzhou, a key trading port, blends Cantonese culture with modern urbanism. Explore the Canton Tower, the historic Shamian Island, and the bustling markets. The city is also known for its exquisite Cantonese cuisine."
+    "description": "Guangzhou, a key trading port, blends Cantonese culture with modern urbanism. Explore the Canton Tower, the historic Shamian Island, and the bustling markets. The city is also known for its exquisite Cantonese cuisine.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Prague",
     "country": "Czech Republic",
-    "description": "Prague, the City of a Hundred Spires, charms with its stunning architecture, historic squares, and the majestic Prague Castle. Stroll across the Charles Bridge and wander the picturesque streets of the Old Town."
+    "description": "Prague, the City of a Hundred Spires, charms with its stunning architecture, historic squares, and the majestic Prague Castle. Stroll across the Charles Bridge and wander the picturesque streets of the Old Town.",
+    "tags": ["Cold", "Museums", "Medium", "Train", "Parks"]
   },
   {
     "city": "Medina",
     "country": "Saudi Arabia",
-    "description": "Medina, one of Islam's two holiest cities, is home to the Prophet's Mosque, which contains Muhammad's tomb. The city's tranquility and spiritual atmosphere make it a profound experience for pilgrims and visitors alike."
+    "description": "Medina, one of Islam's two holiest cities, is home to the Prophet's Mosque, which contains Muhammad's tomb. The city's tranquility and spiritual atmosphere make it a profound experience for pilgrims and visitors alike.",
+    "tags": ["Warm", "Sports", "High", "Bus", "Museums"]
   },
   {
     "city": "Seoul",
     "country": "South Korea",
-    "description": "Seoul, a city that harmoniously blends ancient traditions with cutting-edge technology, is known for its skyscrapers, palaces, and street markets. Explore the historic Gyeongbokgung Palace and the vibrant Hongdae entertainment district."
+    "description": "Seoul, a city that harmoniously blends ancient traditions with cutting-edge technology, is known for its skyscrapers, palaces, and street markets. Explore the historic Gyeongbokgung Palace and the vibrant Hongdae entertainment district.",
+    "tags": ["Cold", "Shopping", "Medium", "Train", "Museums"]
   },
   {
     "city": "Amsterdam",
     "country": "Netherlands",
-    "description": "Amsterdam, with its iconic canals and historic architecture, offers a laid-back atmosphere alongside world-class museums like the Van Gogh Museum and Anne Frank House. Bike along the canal streets to fully experience Dutch charm."
+    "description": "Amsterdam, with its iconic canals and historic architecture, offers a laid-back atmosphere alongside world-class museums like the Van Gogh Museum and Anne Frank House. Bike along the canal streets to fully experience Dutch charm.",
+    "tags": ["Cold", "Museums", "High", "Bike", "Museums"]
   },
   {
     "city": "Agra",
     "country": "India",
-    "description": "Agra, home to the magnificent Taj Mahal, is a symbol of love and a masterpiece of Mughal architecture. Explore the Agra Fort and the nearby Fatehpur Sikri to delve deeper into India's rich history."
+    "description": "Agra, home to the magnificent Taj Mahal, is a symbol of love and a masterpiece of Mughal architecture. Explore the Agra Fort and the nearby Fatehpur Sikri to delve deeper into India's rich history.",
+    "tags": ["Warm", "Sports", "Low", "Bus", "Museums"]
   },
   {
     "city": "Miami",
     "country": "United States",
-    "description": "Miami, known for its beautiful beaches, art deco architecture, and vibrant Cuban influence, offers a dynamic mix of culture, nightlife, and outdoor adventures. Visit the Wynwood Walls for a taste of its thriving arts scene."
+    "description": "Miami, known for its beautiful beaches, art deco architecture, and vibrant Cuban influence, offers a dynamic mix of culture, nightlife, and outdoor adventures. Visit the Wynwood Walls for a taste of its thriving arts scene.",
+    "tags": ["Warm", "Dinning", "High", "Car", "Beaches"]
   },
   {
     "city": "Osaka",
     "country": "Japan",
-    "description": "Osaka, Japan's culinary capital, welcomes visitors with its neon-lit Dotonbori district, historic Osaka Castle, and Universal Studios Japan. Don't miss the chance to indulge in the local street food, especially takoyaki and okonomiyaki."
+    "description": "Osaka, Japan's culinary capital, welcomes visitors with its neon-lit Dotonbori district, historic Osaka Castle, and Universal Studios Japan. Don't miss the chance to indulge in the local street food, especially takoyaki and okonomiyaki.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Parks"]
   },
   {
     "city": "Las Vegas",
     "country": "United States",
-    "description": "Las Vegas, the Entertainment Capital of the World, dazzles with its mega casino-hotels, spectacular shows, and vibrant nightlife. Experience the thrill of the casinos, the luxury of the resorts, and the magic of its entertainment offerings."
+    "description": "Las Vegas, the Entertainment Capital of the World, dazzles with its mega casino-hotels, spectacular shows, and vibrant nightlife. Experience the thrill of the casinos, the luxury of the resorts, and the magic of its entertainment offerings.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Shows"]
   },
   {
     "city": "Shanghai",
     "country": "China",
-    "description": "Shanghai, a global financial hub, is known for its towering skyline, historic Bund, and bustling shopping streets. Explore the futuristic Pudong district, the traditional Yu Garden, and the vibrant nightlife of Xintiandi."
+    "description": "Shanghai, a global financial hub, is known for its towering skyline, historic Bund, and bustling shopping streets. Explore the futuristic Pudong district, the traditional Yu Garden, and the vibrant nightlife of Xintiandi.",
+    "tags": ["Warm", "Shopping", "High", "Train", "Parks"]
   },
   {
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "description": "Ho Chi Minh City, a dynamic city with a complex history, offers a fascinating mix of French colonial architecture, bustling markets, and vibrant street food culture. The War Remnants Museum and Notre-Dame Cathedral are must-visits."
+    "description": "Ho Chi Minh City, a dynamic city with a complex history, offers a fascinating mix of French colonial architecture, bustling markets, and vibrant street food culture. The War Remnants Museum and Notre-Dame Cathedral are must-visits.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Museums"]
   },
   {
     "city": "Denpasar",
     "country": "Indonesia",
-    "description": "Denpasar, the gateway to the magical island of Bali, offers a mix of urban excitement and traditional culture. Explore the bustling markets, serene temples, and the Bali Museum to get a taste of Balinese life."
+    "description": "Denpasar, the gateway to the magical island of Bali, offers a mix of urban excitement and traditional culture. Explore the bustling markets, serene temples, and the Bali Museum to get a taste of Balinese life.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Barcelona",
     "country": "Spain",
-    "description": "Barcelona, famed for its unique Gaudí architecture and the vibrant Las Ramblas, offers a rich cultural tapestry, from the Gothic Quarter to the stunning Park Güell. Enjoy the Mediterranean beaches and the city's dynamic food scene."
+    "description": "Barcelona, famed for its unique Gaudí architecture and the vibrant Las Ramblas, offers a rich cultural tapestry, from the Gothic Quarter to the stunning Park Güell. Enjoy the Mediterranean beaches and the city's dynamic food scene.",
+    "tags": ["Warm", "Shopping", "High", "Bus", "Parks"]
   },
   {
     "city": "Los Angeles",
     "country": "United States",
-    "description": "Los Angeles, the entertainment capital, is known for Hollywood, expansive beaches, and a thriving cultural scene. Explore the iconic Hollywood Sign, the Walk of Fame, and the city's diverse neighborhoods for a taste of the LA lifestyle."
+    "description": "Los Angeles, the entertainment capital, is known for Hollywood, expansive beaches, and a thriving cultural scene. Explore the iconic Hollywood Sign, the Walk of Fame, and the city's diverse neighborhoods for a taste of the LA lifestyle.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Beaches"]
   },
   {
     "city": "Milan",
     "country": "Italy",
-    "description": "Milan, Italy's fashion and design capital, offers a stunning mix of modernity and history, from the majestic Duomo to the trendy Navigli district. Don't miss the Last Supper by Leonardo da Vinci, housed in the Convent of Santa Maria delle Grazie."
+    "description": "Milan, Italy's fashion and design capital, offers a stunning mix of modernity and history, from the majestic Duomo to the trendy Navigli district. Don't miss the Last Supper by Leonardo da Vinci, housed in the Convent of Santa Maria delle Grazie.",
+    "tags": ["Warm", "Shopping", "High", "Train", "Museums"]
   },
   {
     "city": "Chennai",
     "country": "India",
-    "description": "Chennai, known for its classical music and dance scene, offers a rich cultural experience with its temples, beaches, and culinary delights. Visit the Kapaleeshwarar Temple and Marina Beach to experience the soul of this vibrant city."
+    "description": "Chennai, known for its classical music and dance scene, offers a rich cultural experience with its temples, beaches, and culinary delights. Visit the Kapaleeshwarar Temple and Marina Beach to experience the soul of this vibrant city.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Beaches"]
   },
   {
     "city": "Vienna",
     "country": "Austria",
-    "description": "Vienna, the city of music, captivates with its imperial palaces, classical music heritage, and vibrant coffeehouse culture. Explore the Schönbrunn Palace, the Belvedere Museum, and enjoy the melodies of Mozart and Strauss."
+    "description": "Vienna, the city of music, captivates with its imperial palaces, classical music heritage, and vibrant coffeehouse culture. Explore the Schönbrunn Palace, the Belvedere Museum, and enjoy the melodies of Mozart and Strauss.",
+    "tags": ["Cold", "Museums", "High", "Train", "Parks"]
   },
   {
     "city": "Johor Bahru",
     "country": "Malaysia",
-    "description": "Johor Bahru, the southern gateway to Malaysia, offers a blend of cultural attractions, shopping malls, and amusement parks. Don't miss the historic Sultan Abu Bakar State Mosque and the bustling Johor Bahru City Square."
+    "description": "Johor Bahru, the southern gateway to Malaysia, offers a blend of cultural attractions, shopping malls, and amusement parks. Don't miss the historic Sultan Abu Bakar State Mosque and the bustling Johor Bahru City Square.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Parks"]
   },
   {
     "city": "Jaipur",
     "country": "India",
-    "description": "Jaipur, the Pink City, is renowned for its stunning forts, palaces, and rich Rajasthani culture. Explore the Amber Fort, the City Palace, and the astronomical observatory, Jantar Mantar, for a glimpse into India's royal past."
+    "description": "Jaipur, the Pink City, is renowned for its stunning forts, palaces, and rich Rajasthani culture. Explore the Amber Fort, the City Palace, and the astronomical observatory, Jantar Mantar, for a glimpse into India's royal past.",
+    "tags": ["Warm", "Sports", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Cancún",
     "country": "Mexico",
-    "description": "Cancún, a Mexican paradise, is known for its crystal-clear Caribbean waters, white-sand beaches, and vibrant nightlife. Visit the Mayan ruins of Chichen Itza and Tulum for a touch of history amidst natural beauty."
+    "description": "Cancún, a Mexican paradise, is known for its crystal-clear Caribbean waters, white-sand beaches, and vibrant nightlife. Visit the Mayan ruins of Chichen Itza and Tulum for a touch of history amidst natural beauty.",
+    "tags": ["Warm", "Beaches", "High", "Bus", "Beaches"]
   },
   {
     "city": "Berlin",
     "country": "Germany",
-    "description": "Berlin, a city rich in history and culture, is known for its vibrant arts scene, historical landmarks, and modern architecture. Explore the Berlin Wall, the Brandenburg Gate, and the diverse culinary scene."
+    "description": "Berlin, a city rich in history and culture, is known for its vibrant arts scene, historical landmarks, and modern architecture. Explore the Berlin Wall, the Brandenburg Gate, and the diverse culinary scene.",
+    "tags": ["Cold", "Museums", "Medium", "Train", "Parks"]
   },
   {
     "city": "Athens",
     "country": "Greece",
-    "description": "Athens, the cradle of Western civilization, offers a journey through ancient history with its well-preserved monuments and works of art. The Acropolis and the Parthenon stand as symbols of Greece's glorious past."
+    "description": "Athens, the cradle of Western civilization, offers a journey through ancient history with its well-preserved monuments and works of art. The Acropolis and the Parthenon stand as symbols of Greece's glorious past.",
+    "tags": ["Warm", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Orlando",
     "country": "United States",
-    "description": "Orlando, the theme park capital of the world, is home to Walt Disney World, Universal Studios, and SeaWorld. Experience the magic of the parks, the thrills of the rides, and the joy of the parades and shows."
+    "description": "Orlando, the theme park capital of the world, is home to Walt Disney World, Universal Studios, and SeaWorld. Experience the magic of the parks, the thrills of the rides, and the joy of the parades and shows.",
+    "tags": ["Warm", "Sports", "High", "Car", "Parks"]
   },
   {
     "city": "Moscow",
     "country": "Russia",
-    "description": "Moscow, Russia's historical and cultural heart, features the iconic Red Square, the Kremlin, and the stunning St. Basil's Cathedral. Experience its rich history, vibrant arts scene, and the majestic Moscow River."
+    "description": "Moscow, Russia's historical and cultural heart, features the iconic Red Square, the Kremlin, and the stunning St. Basil's Cathedral. Experience its rich history, vibrant arts scene, and the majestic Moscow River.",
+    "tags": ["Cold", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Venice",
     "country": "Italy",
-    "description": "Venice, the city of canals, is a masterpiece of Gothic architecture, enchanting with its winding canals, historic bridges, and the grandeur of St. Mark's Basilica. Explore the enchanting alleyways and the vibrant Piazza San Marco."
+    "description": "Venice, the city of canals, is a masterpiece of Gothic architecture, enchanting with its winding canals, historic bridges, and the grandeur of St. Mark's Basilica. Explore the enchanting alleyways and the vibrant Piazza San Marco.",
+    "tags": ["Warm", "Shopping", "High", "Boat", "Museums"]
   },
   {
     "city": "Madrid",
     "country": "Spain",
-    "description": "Madrid, Spain's central capital, is a city of elegant boulevards, expansive parks, and rich repositories of European art, including the Prado Museum's works by Goya, Velázquez, and other Spanish masters."
+    "description": "Madrid, Spain's central capital, is a city of elegant boulevards, expansive parks, and rich repositories of European art, including the Prado Museum's works by Goya, Velázquez, and other Spanish masters.",
+    "tags": ["Warm", "Museums", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Ha Long",
     "country": "Vietnam",
-    "description": "Ha Long Bay, known for its emerald waters and thousands of towering limestone islands topped with rainforests, is a UNESCO World Heritage site. Enjoy cruises and cave tours in this picturesque natural wonder."
+    "description": "Ha Long Bay, known for its emerald waters and thousands of towering limestone islands topped with rainforests, is a UNESCO World Heritage site. Enjoy cruises and cave tours in this picturesque natural wonder.",
+    "tags": ["Warm", "Sports", "Medium", "Boat", "Parks"]
   },
   {
     "city": "Riyadh",
     "country": "Saudi Arabia",
-    "description": "Riyadh, the capital of Saudi Arabia, combines modern skyscrapers with historic sites like the Al Masmak Fortress. It's a city where modernity meets tradition, offering a glimpse into the kingdom's rich culture and heritage."
+    "description": "Riyadh, the capital of Saudi Arabia, combines modern skyscrapers with historic sites like the Al Masmak Fortress. It's a city where modernity meets tradition, offering a glimpse into the kingdom's rich culture and heritage.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Museums"]
   },
   {
     "city": "Dublin",
     "country": "Ireland",
-    "description": "Dublin, Ireland's capital, is known for its literary tradition, historic buildings, and lively pubs. Explore the Guinness Storehouse, the Trinity College Library, and enjoy the vibrant nightlife."
+    "description": "Dublin, Ireland's capital, is known for its literary tradition, historic buildings, and lively pubs. Explore the Guinness Storehouse, the Trinity College Library, and enjoy the vibrant nightlife.",
+    "tags": ["Cold", "Dinning", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Florence",
     "country": "Italy",
-    "description": "Florence, the cradle of the Renaissance, is a treasure trove of art and architecture. Visit the Uffizi Gallery, the Duomo, and Ponte Vecchio, and marvel at the works of Michelangelo, Leonardo da Vinci, and other masters."
+    "description": "Florence, the cradle of the Renaissance, is a treasure trove of art and architecture. Visit the Uffizi Gallery, the Duomo, and Ponte Vecchio, and marvel at the works of Michelangelo, Leonardo da Vinci, and other masters.",
+    "tags": ["Warm", "Museums", "High", "Bus", "Museums"]
   },
   {
     "city": "Jerusalem",
     "country": "Israel",
-    "description": "Jerusalem, a city sacred to Judaism, Christianity, and Islam, offers a profound spiritual journey. Explore the ancient walls, the Western Wall, the Church of the Holy Sepulchre, and the vibrant markets of this historic city."
+    "description": "Jerusalem, a city sacred to Judaism, Christianity, and Islam, offers a profound spiritual journey. Explore the ancient walls, the Western Wall, the Church of the Holy Sepulchre, and the vibrant markets of this historic city.",
+    "tags": ["Warm", "Museums", "High", "Bus", "Museums"]
   },
   {
     "city": "Hanoi",
     "country": "Vietnam",
-    "description": "Hanoi, the capital of Vietnam, is known for its centuries-old architecture, rich culture, and Southeast Asian, Chinese, and French influences. Explore the Old Quarter, the Hoan Kiem Lake, and the Ho Chi Minh Mausoleum."
+    "description": "Hanoi, the capital of Vietnam, is known for its centuries-old architecture, rich culture, and Southeast Asian, Chinese, and French influences. Explore the Old Quarter, the Hoan Kiem Lake, and the Ho Chi Minh Mausoleum.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Parks"]
   },
   {
     "city": "Toronto",
     "country": "Canada",
-    "description": "Toronto, Canada's largest city, is a dynamic metropolis with a core of soaring skyscrapers, all dwarfed by the iconic CN Tower. Enjoy the multicultural neighborhoods, vibrant markets, and the scenic Toronto Islands."
+    "description": "Toronto, Canada's largest city, is a dynamic metropolis with a core of soaring skyscrapers, all dwarfed by the iconic CN Tower. Enjoy the multicultural neighborhoods, vibrant markets, and the scenic Toronto Islands.",
+    "tags": ["Cold", "Shopping", "Medium", "Train", "Parks"]
   },
   {
     "city": "Johannesburg",
     "country": "South Africa",
-    "description": "Johannesburg, South Africa's biggest city and the heart of its mining industry, also known as the City of Gold, offers a rich history, vibrant arts scene, and the Apartheid Museum, a must-visit for understanding the country's past."
+    "description": "Johannesburg, South Africa's biggest city and the heart of its mining industry, also known as the City of Gold, offers a rich history, vibrant arts scene, and the Apartheid Museum, a must-visit for understanding the country's past.",
+    "tags": ["Warm", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Sydney",
     "country": "Australia",
-    "description": "Sydney, known for its stunning harbourfront Sydney Opera House, is a vibrant city with a lively arts scene, beautiful beaches, and the iconic Harbour Bridge. Enjoy the outdoor lifestyle and explore the Royal Botanic Garden."
+    "description": "Sydney, known for its stunning harbourfront Sydney Opera House, is a vibrant city with a lively arts scene, beautiful beaches, and the iconic Harbour Bridge. Enjoy the outdoor lifestyle and explore the Royal Botanic Garden.",
+    "tags": ["Warm", "Beaches", "High", "Bus", "Parks"]
   },
   {
     "city": "Munich",
     "country": "Germany",
-    "description": "Munich, the capital of Bavaria, is known for its annual Oktoberfest beer festival, its beautiful art museums, and the fairy-tale Neuschwanstein Castle nearby. Explore the historic Marienplatz and enjoy Bavarian hospitality."
+    "description": "Munich, the capital of Bavaria, is known for its annual Oktoberfest beer festival, its beautiful art museums, and the fairy-tale Neuschwanstein Castle nearby. Explore the historic Marienplatz and enjoy Bavarian hospitality.",
+    "tags": ["Cold", "Dinning", "High", "Train", "Museums"]
   },
   {
     "city": "Jakarta",
     "country": "Indonesia",
-    "description": "Jakarta, Indonesia's massive capital, sits on the northwest coast of the island of Java. A historic mix of cultures – Javanese, Malay, Chinese, Arab, Indian, and European – has influenced its architecture, language, and cuisine."
+    "description": "Jakarta, Indonesia's massive capital, sits on the northwest coast of the island of Java. A historic mix of cultures – Javanese, Malay, Chinese, Arab, Indian, and European – has influenced its architecture, language, and cuisine.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Museums"]
   },
   {
     "city": "Beijing",
     "country": "China",
-    "description": "Beijing, the capital of China, is a city where ancient culture and modern progress coexist. Visit the Forbidden City, the Great Wall, and the Temple of Heaven to experience the rich history of this ancient city."
+    "description": "Beijing, the capital of China, is a city where ancient culture and modern progress coexist. Visit the Forbidden City, the Great Wall, and the Temple of Heaven to experience the rich history of this ancient city.",
+    "tags": ["Cold", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Saint Petersburg",
     "country": "Russia",
-    "description": "Saint Petersburg, known as Russia's cultural heart, is home to the Hermitage, one of the largest art museums in the world. Explore the historic palaces, the beautiful canals, and the vibrant arts scene of this majestic city."
+    "description": "Saint Petersburg, known as Russia's cultural heart, is home to the Hermitage, one of the largest art museums in the world. Explore the historic palaces, the beautiful canals, and the vibrant arts scene of this majestic city.",
+    "tags": ["Cold", "Museums", "High", "Bus", "Museums"]
   },
   {
     "city": "Brussels",
     "country": "Belgium",
-    "description": "Brussels, the capital of Belgium and the European Union, is known for its Art Nouveau architecture and the iconic Atomium. Visit the beautiful Grand Place, enjoy the famous Belgian chocolates, and explore the numerous museums."
+    "description": "Brussels, the capital of Belgium and the European Union, is known for its Art Nouveau architecture and the iconic Atomium. Visit the beautiful Grand Place, enjoy the famous Belgian chocolates, and explore the numerous museums.",
+    "tags": ["Cold", "Dinning", "Medium", "Train", "Museums"]
   },
   {
     "city": "Budapest",
     "country": "Hungary",
-    "description": "Budapest, the capital of Hungary, is known for its historic thermal baths, the majestic Danube River, and the stunning architecture of the Buda Castle. Explore the city's rich history, vibrant nightlife, and delicious cuisine."
+    "description": "Budapest, the capital of Hungary, is known for its historic thermal baths, the majestic Danube River, and the stunning architecture of the Buda Castle. Explore the city's rich history, vibrant nightlife, and delicious cuisine.",
+    "tags": ["Cold", "Dinning", "Low", "Bus", "Parks"]
   },
   {
     "city": "Naples",
     "country": "Italy",
-    "description": "Naples, the birthplace of pizza, offers a rich tapestry of art, history, and gastronomy. Explore the ancient ruins of Pompeii and Herculaneum, the vibrant streets of the historic center, and the breathtaking views of the Bay of Naples."
+    "description": "Naples, the birthplace of pizza, offers a rich tapestry of art, history, and gastronomy. Explore the ancient ruins of Pompeii and Herculaneum, the vibrant streets of the historic center, and the breathtaking views of the Bay of Naples.",
+    "tags": ["Warm", "Dinning", "Low", "Train", "Museums"]
   },
   {
     "city": "Lisbon",
     "country": "Portugal",
-    "description": "Lisbon, Portugal's hilly, coastal capital city, is known for its cafe culture and soulful Fado music. Visit the medieval Belém Tower and the impressive Jerónimos Monastery, and enjoy the stunning views from São Jorge Castle."
+    "description": "Lisbon, Portugal's hilly, coastal capital city, is known for its cafe culture and soulful Fado music. Visit the medieval Belém Tower and the impressive Jerónimos Monastery, and enjoy the stunning views from São Jorge Castle.",
+    "tags": ["Warm", "Dinning", "Medium", "Tram", "Beaches"]
   },
   {
     "city": "Dammam",
     "country": "Saudi Arabia",
-    "description": "Dammam, part of the larger Dammam Metropolitan Area, is known for its scenic waterfront on the Arabian Gulf, modern shopping centers, and the King Fahd Park, one of the largest in Saudi Arabia."
+    "description": "Dammam, part of the larger Dammam Metropolitan Area, is known for its scenic waterfront on the Arabian Gulf, modern shopping centers, and the King Fahd Park, one of the largest in Saudi Arabia.",
+    "tags": ["Warm", "Shopping", "Medium", "Car", "Parks"]
   },
   {
     "city": "Penang Island",
     "country": "Malaysia",
-    "description": "Penang Island, known for its historic George Town, beautiful beaches, and delicious cuisine, is a vibrant mix of cultures. Explore the street art, the Penang Hill, and indulge in the local food scene."
+    "description": "Penang Island, known for its historic George Town, beautiful beaches, and delicious cuisine, is a vibrant mix of cultures. Explore the street art, the Penang Hill, and indulge in the local food scene.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Beaches"]
   },
   {
     "city": "Heraklion",
     "country": "Greece",
-    "description": "Heraklion, the capital of Crete, is known for the Palace of Knossos, the Archaeological Museum, and its medieval architecture. Enjoy the vibrant markets, the beautiful beaches, and the rich history of this ancient city."
+    "description": "Heraklion, the capital of Crete, is known for the Palace of Knossos, the Archaeological Museum, and its medieval architecture. Enjoy the vibrant markets, the beautiful beaches, and the rich history of this ancient city.",
+    "tags": ["Warm", "Shopping", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Kyoto",
     "country": "Japan",
-    "description": "Kyoto, once the capital of Japan, is famous for its classical Buddhist temples, as well as gardens, imperial palaces, Shinto shrines, and traditional wooden houses. It’s also known for formal traditions such as kaiseki dining and geisha female entertainers."
+    "description": "Kyoto, once the capital of Japan, is famous for its classical Buddhist temples, as well as gardens, imperial palaces, Shinto shrines, and traditional wooden houses. It’s also known for formal traditions such as kaiseki dining and geisha female entertainers.",
+    "tags": ["Warm", "Sports", "High", "Bus", "Parks"]
   },
   {
     "city": "Zhuhai",
     "country": "China",
-    "description": "Zhuhai, known for its beautiful coastline and the iconic Zhuhai Opera House, offers a relaxed pace of life compared to its bustling neighbors. Enjoy the beaches, the islands, and the vibrant nightlife of this modern city."
+    "description": "Zhuhai, known for its beautiful coastline and the iconic Zhuhai Opera House, offers a relaxed pace of life compared to its bustling neighbors. Enjoy the beaches, the islands, and the vibrant nightlife of this modern city.",
+    "tags": ["Warm", "Dinning", "Medium", "Car", "Beaches"]
   },
   {
     "city": "Vancouver",
     "country": "Canada",
-    "description": "Vancouver, a bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities. Surrounded by mountains, it has thriving art, theatre, and music scenes."
+    "description": "Vancouver, a bustling west coast seaport in British Columbia, is among Canada’s densest, most ethnically diverse cities. Surrounded by mountains, it has thriving art, theatre, and music scenes.",
+    "tags": ["Cold", "Sports", "High", "Bus", "Parks"]
   },
   {
     "city": "Chiang Mai",
     "country": "Thailand",
-    "description": "Chiang Mai, known for its stunning temples and vibrant night markets, offers a quieter, more cultural experience than the bustling streets of Bangkok. Explore the historic old city, the mountain temples, and the local crafts."
+    "description": "Chiang Mai, known for its stunning temples and vibrant night markets, offers a quieter, more cultural experience than the bustling streets of Bangkok. Explore the historic old city, the mountain temples, and the local crafts.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Parks"]
   },
   {
     "city": "Copenhagen",
     "country": "Denmark",
-    "description": "Copenhagen, Denmark's capital, sits on the coastal islands of Zealand and Amager. It’s known for its cycling culture, strong economy, and historic center, containing the royal family’s Amalienborg Palace, Christiansborg Palace, and the Renaissance-era Rosenborg Castle."
+    "description": "Copenhagen, Denmark's capital, sits on the coastal islands of Zealand and Amager. It’s known for its cycling culture, strong economy, and historic center, containing the royal family’s Amalienborg Palace, Christiansborg Palace, and the Renaissance-era Rosenborg Castle.",
+    "tags": ["Cold", "Sports", "High", "Bike", "Parks"]
   },
   {
     "city": "San Francisco",
     "country": "United States",
-    "description": "San Francisco, in northern California, is known for its hilly landscape, year-round fog, iconic Golden Gate Bridge, cable cars, and colorful Victorian houses. The Financial District's Transamerica Pyramid is its most distinctive skyscraper."
+    "description": "San Francisco, in northern California, is known for its hilly landscape, year-round fog, iconic Golden Gate Bridge, cable cars, and colorful Victorian houses. The Financial District's Transamerica Pyramid is its most distinctive skyscraper.",
+    "tags": ["Warm", "Dinning", "High", "Tram", "Parks"]
   },
   {
     "city": "Melbourne",
     "country": "Australia",
-    "description": "Melbourne, Australia’s coastal capital of the southeastern state of Victoria, is known for its artsy, vibrant, and inclusive culture. It's also famed for its cafes, bars, and street art."
+    "description": "Melbourne, Australia’s coastal capital of the southeastern state of Victoria, is known for its artsy, vibrant, and inclusive culture. It's also famed for its cafes, bars, and street art.",
+    "tags": ["Warm", "Dinning", "High", "Train", "Parks"]
   },
   {
     "city": "Warsaw",
     "country": "Poland",
-    "description": "Warsaw, Poland’s capital, is known for its varied architecture, reflecting the city's long, turbulent history, from Gothic churches and neoclassical palaces to Soviet-era blocks and modern skyscrapers."
+    "description": "Warsaw, Poland’s capital, is known for its varied architecture, reflecting the city's long, turbulent history, from Gothic churches and neoclassical palaces to Soviet-era blocks and modern skyscrapers.",
+    "tags": ["Cold", "Shopping", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Marrakesh",
     "country": "Morocco",
-    "description": "Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces, and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire, with mazelike alleys where thriving souks sell traditional textiles, pottery, and jewelry."
+    "description": "Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces, and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire, with mazelike alleys where thriving souks sell traditional textiles, pottery, and jewelry.",
+    "tags": ["Warm", "Shopping", "Medium", "Bus", "Markets"]
   },
   {
     "city": "Kolkata",
     "country": "India",
-    "description": "Kolkata (formerly Calcutta), the capital of India’s West Bengal state, is known for its grand colonial architecture, art galleries, and cultural festivals. It’s also home to Mother House, headquarters of the Missionaries of Charity, founded by Mother Teresa."
+    "description": "Kolkata (formerly Calcutta), the capital of India’s West Bengal state, is known for its grand colonial architecture, art galleries, and cultural festivals. It’s also home to Mother House, headquarters of the Missionaries of Charity, founded by Mother Teresa.",
+    "tags": ["Warm", "Dinning", "Low", "Train", "Museums"]
   },
   {
     "city": "Cebu City",
     "country": "Philippines",
-    "description": "Cebu City, a port city on the island of Cebu in the Philippines, is known for its Spanish colonial buildings in its old city, such as the Basilica Minore del Santo Niño church and the triangular Fort San Pedro. It's also a gateway to the area’s stunning beaches and dive sites."
+    "description": "Cebu City, a port city on the island of Cebu in the Philippines, is known for its Spanish colonial buildings in its old city, such as the Basilica Minore del Santo Niño church and the triangular Fort San Pedro. It's also a gateway to the area’s stunning beaches and dive sites.",
+    "tags": ["Warm", "Beaches", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Auckland",
     "country": "New Zealand",
-    "description": "Auckland, based around 2 large harbors, is a major city in the north of New Zealand’s North Island. It's known for its vibrant Pacific Island and Maori cultures, being a major arts and cultural center."
+    "description": "Auckland, based around 2 large harbors, is a major city in the north of New Zealand’s North Island. It's known for its vibrant Pacific Island and Maori cultures, being a major arts and cultural center.",
+    "tags": ["Warm", "Sports", "High", "Bus", "Parks"]
   },
   {
     "city": "Tel Aviv",
     "country": "Israel",
-    "description": "Tel Aviv, a city on Israel’s Mediterranean coast, is marked by stark 1930s Bauhaus buildings, thousands of which are clustered in the White City architectural area. The city is also known for its laid-back atmosphere and a lively nightlife scene."
+    "description": "Tel Aviv, a city on Israel’s Mediterranean coast, is marked by stark 1930s Bauhaus buildings, thousands of which are clustered in the White City architectural area. The city is also known for its laid-back atmosphere and a lively nightlife scene.",
+    "tags": ["Warm", "Beaches", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Guilin",
     "country": "China",
-    "description": "Guilin is known for its dramatic landscape of limestone karst hills. At its center are 2 lakes, Shanhu (Cedar Lake) and Ronghu (Banyan Lake), remaining from a medieval-era moat that once surrounded the city."
+    "description": "Guilin is known for its dramatic landscape of limestone karst hills. At its center are 2 lakes, Shanhu (Cedar Lake) and Ronghu (Banyan Lake), remaining from a medieval-era moat that once surrounded the city.",
+    "tags": ["Warm", "Sports", "Low", "Bus", "Parks"]
   },
   {
     "city": "Honolulu",
     "country": "United States",
-    "description": "Honolulu, on the island of Oahu’s south shore, is the capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife, and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance."
+    "description": "Honolulu, on the island of Oahu’s south shore, is the capital of Hawaii and gateway to the U.S. island chain. The Waikiki neighborhood is its center for dining, nightlife, and shopping, famed for its iconic crescent beach backed by palms and high-rise hotels, with volcanic Diamond Head crater looming in the distance.",
+    "tags": ["Warm", "Beaches", "High", "Bus", "Beaches"]
   },
   {
     "city": "Hurghada",
     "country": "Egypt",
-    "description": "Hurghada is a beach resort town stretching some 40km along Egypt’s Red Sea coast. It’s renowned for scuba diving, and has numerous dive shops and schools in its modern Sekalla district."
+    "description": "Hurghada is a beach resort town stretching some 40km along Egypt’s Red Sea coast. It’s renowned for scuba diving, and has numerous dive shops and schools in its modern Sekalla district.",
+    "tags": ["Warm", "Sports", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Kraków",
     "country": "Poland",
-    "description": "Kraków, a southern Poland city near the border of the Czech Republic, is known for its well-preserved medieval core and Jewish quarter. Its old town – ringed by Planty Park and remnants of the city’s medieval walls – is centered on the stately, expansive Rynek Glówny (market square)."
+    "description": "Kraków, a southern Poland city near the border of the Czech Republic, is known for its well-preserved medieval core and Jewish quarter. Its old town – ringed by Planty Park and remnants of the city’s medieval walls – is centered on the stately, expansive Rynek Glówny (market square).",
+    "tags": ["Cold", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Muğla",
     "country": "Turkey",
-    "description": "Muğla is a city in southwestern Turkey. It's known for its Ottoman architecture, including the Muğla Museum, housed in an 18th-century building with archaeological and ethnographic exhibits."
+    "description": "Muğla is a city in southwestern Turkey. It's known for its Ottoman architecture, including the Muğla Museum, housed in an 18th-century building with archaeological and ethnographic exhibits.",
+    "tags": ["Warm", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Buenos Aires",
     "country": "Argentina",
-    "description": "Buenos Aires is Argentina’s big, cosmopolitan capital city. Its center is the Plaza de Mayo, lined with stately 19th-century buildings including Casa Rosada, the iconic, balconied presidential palace."
+    "description": "Buenos Aires is Argentina’s big, cosmopolitan capital city. Its center is the Plaza de Mayo, lined with stately 19th-century buildings including Casa Rosada, the iconic, balconied presidential palace.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Chiba",
     "country": "Japan",
-    "description": "Chiba is a large port city in Chiba Prefecture, Japan. It’s known for the Chiba Urban Monorail, the longest suspended monorail system in the world. Makuhari Messe is a vast convention center in the city that hosts technology and anime expos."
+    "description": "Chiba is a large port city in Chiba Prefecture, Japan. It’s known for the Chiba Urban Monorail, the longest suspended monorail system in the world. Makuhari Messe is a vast convention center in the city that hosts technology and anime expos.",
+    "tags": ["Warm", "Shopping", "Medium", "Train", "Parks"]
   },
   {
     "city": "Frankfurt am Main",
     "country": "Germany",
-    "description": "Frankfurt, a central German city on the river Main, is a major financial hub that's home to the European Central Bank. It's the birthplace of famed writer Johann Wolfgang von Goethe, whose former home is now the Goethe House Museum."
+    "description": "Frankfurt, a central German city on the river Main, is a major financial hub that's home to the European Central Bank. It's the birthplace of famed writer Johann Wolfgang von Goethe, whose former home is now the Goethe House Museum.",
+    "tags": ["Cold", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Stockholm",
     "country": "Sweden",
-    "description": "Stockholm, the capital of Sweden, encompasses 14 islands and more than 50 bridges on an extensive Baltic Sea archipelago. The cobblestone streets and ochre-colored buildings of Gamla Stan (the old town) are home to the 13th-century Storkyrkan Cathedral, the Kungliga Slottet Royal Palace, and the Nobel Museum, which focuses on the Nobel Prize."
+    "description": "Stockholm, the capital of Sweden, encompasses 14 islands and more than 50 bridges on an extensive Baltic Sea archipelago. The cobblestone streets and ochre-colored buildings of Gamla Stan (the old town) are home to the 13th-century Storkyrkan Cathedral, the Kungliga Slottet Royal Palace, and the Nobel Museum, which focuses on the Nobel Prize.",
+    "tags": ["Cold", "Museums", "High", "Boat", "Museums"]
   },
   {
     "city": "Lima",
     "country": "Peru",
-    "description": "Lima, the capital of Peru, lies on the country’s arid Pacific coast. Though its colonial center is preserved, it's a bustling metropolis and one of South America’s largest cities. It's home to the Museo Larco collection of pre-Columbian art and the Museo de la Nación, tracing the history of Peru’s ancient civilizations."
+    "description": "Lima, the capital of Peru, lies on the country’s arid Pacific coast. Though its colonial center is preserved, it's a bustling metropolis and one of South America’s largest cities. It's home to the Museo Larco collection of pre-Columbian art and the Museo de la Nación, tracing the history of Peru’s ancient civilizations.",
+    "tags": ["Warm", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Da Nang",
     "country": "Vietnam",
-    "description": "Da Nang is a coastal city in central Vietnam known for its sandy beaches and history as a French colonial port. It's a popular base for visiting the inland Bà Nà hills to the west of the city."
+    "description": "Da Nang is a coastal city in central Vietnam known for its sandy beaches and history as a French colonial port. It's a popular base for visiting the inland Bà Nà hills to the west of the city.",
+    "tags": ["Warm", "Beaches", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Batam",
     "country": "Indonesia",
-    "description": "Batam is a small island in Indonesia’s Riau Archipelago in the South China Sea. A short boat ride from Singapore, it's known for its beaches, nightlife, malls, and duty-free shopping."
+    "description": "Batam is a small island in Indonesia’s Riau Archipelago in the South China Sea. A short boat ride from Singapore, it's known for its beaches, nightlife, malls, and duty-free shopping.",
+    "tags": ["Warm", "Shopping", "Low", "Car", "Beaches"]
   },
   {
     "city": "Nice",
     "country": "France",
-    "description": "Nice, a city on France’s Mediterranean coast, has long been a playground for the rich and famous. Its beautiful beaches, Belle Époque architecture, and vibrant street life make it a popular destination for travelers worldwide."
+    "description": "Nice, a city on France’s Mediterranean coast, has long been a playground for the rich and famous. Its beautiful beaches, Belle Époque architecture, and vibrant street life make it a popular destination for travelers worldwide.",
+    "tags": ["Warm", "Beaches", "High", "Bus", "Beaches"]
   },
   {
     "city": "Fukuoka",
     "country": "Japan",
-    "description": "Fukuoka, the capital of Fukuoka Prefecture, sits on the northern shore of Japan’s Kyushu Island. It's known for its ancient temples, beaches, and modern shopping malls, including Canal City."
+    "description": "Fukuoka, the capital of Fukuoka Prefecture, sits on the northern shore of Japan’s Kyushu Island. It's known for its ancient temples, beaches, and modern shopping malls, including Canal City.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Parks"]
   },
   {
     "city": "Abu Dhabi",
     "country": "United Arab Emirates",
-    "description": "Abu Dhabi, the capital of the United Arab Emirates, sits off the mainland on an island in the Persian Gulf. Its focus on oil exports and commerce is reflected by the skyline’s modern towers and shopping megacenters such as Abu Dhabi and Marina malls."
+    "description": "Abu Dhabi, the capital of the United Arab Emirates, sits off the mainland on an island in the Persian Gulf. Its focus on oil exports and commerce is reflected by the skyline’s modern towers and shopping megacenters such as Abu Dhabi and Marina malls.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Beaches"]
   },
   {
     "city": "Jeju",
     "country": "South Korea",
-    "description": "Jeju is a volcanic island in South Korea dominated by Hallasan, a volcano 1,950m high and the country’s highest peak. Around the base of the mountain, the semi-tropical Hallasan National Park has hiking trails and a crater lake at the 1,950m summit."
+    "description": "Jeju is a volcanic island in South Korea dominated by Hallasan, a volcano 1,950m high and the country’s highest peak. Around the base of the mountain, the semi-tropical Hallasan National Park has hiking trails and a crater lake at the 1,950m summit.",
+    "tags": ["Warm", "Sports", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Porto",
     "country": "Portugal",
-    "description": "Porto, a coastal city in northwest Portugal, is known for its stately bridges and port wine production. In the medieval Ribeira (riverside) district, narrow cobbled streets wind past merchants’ houses and cafes."
+    "description": "Porto, a coastal city in northwest Portugal, is known for its stately bridges and port wine production. In the medieval Ribeira (riverside) district, narrow cobbled streets wind past merchants’ houses and cafes.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Museums"]
   },
   {
     "city": "Rhodes",
     "country": "Greece",
-    "description": "Rhodes, the largest of Greece’s Dodecanese islands, is known for its beach resorts, ancient ruins, and remnants of its occupation by the Knights of St. John during the Crusades."
+    "description": "Rhodes, the largest of Greece’s Dodecanese islands, is known for its beach resorts, ancient ruins, and remnants of its occupation by the Knights of St. John during the Crusades.",
+    "tags": ["Warm", "Beaches", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Rio de Janeiro",
     "country": "Brazil",
-    "description": "Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches, 38m Christ the Redeemer statue atop Mount Corcovado, and for Sugarloaf Mountain, a granite peak with cable cars to its summit."
+    "description": "Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches, 38m Christ the Redeemer statue atop Mount Corcovado, and for Sugarloaf Mountain, a granite peak with cable cars to its summit.",
+    "tags": ["Warm", "Beaches", "High", "Bus", "Beaches"]
   },
   {
     "city": "Krabi",
     "country": "Thailand",
-    "description": "Krabi, a province on southern Thailand’s Andaman coast, is an almost otherworldly region of labyrinthine archipelagos, where islands seem to erupt vertically out of the sea and secluded beaches are only accessible by colorfully adorned long tail boats."
+    "description": "Krabi, a province on southern Thailand’s Andaman coast, is an almost otherworldly region of labyrinthine archipelagos, where islands seem to erupt vertically out of the sea and secluded beaches are only accessible by colorfully adorned long tail boats.",
+    "tags": ["Warm", "Beaches", "Medium", "Boat", "Beaches"]
   },
   {
     "city": "Bangalore",
     "country": "India",
-    "description": "Bengaluru (also called Bangalore) is the capital of India's southern Karnataka state. The center of India’s high-tech industry, the city is also known for its parks and nightlife."
+    "description": "Bengaluru (also called Bangalore) is the capital of India's southern Karnataka state. The center of India’s high-tech industry, the city is also known for its parks and nightlife.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Parks"]
   },
   {
     "city": "Mexico City",
     "country": "Mexico",
-    "description": "Mexico City is the densely populated, high-altitude capital of Mexico. It's known for its Templo Mayor (a 13th-century Aztec temple), the baroque Catedral Metropolitana de México of the Spanish conquistadors, and the Palacio Nacional, which houses historic murals by Diego Rivera."
+    "description": "Mexico City is the densely populated, high-altitude capital of Mexico. It's known for its Templo Mayor (a 13th-century Aztec temple), the baroque Catedral Metropolitana de México of the Spanish conquistadors, and the Palacio Nacional, which houses historic murals by Diego Rivera.",
+    "tags": ["Warm", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Punta Cana",
     "country": "Dominican Republic",
-    "description": "Punta Cana, a resort town in the eastern Dominican Republic, is known for its clear waters and stretchy beaches lined with coconut palms. It's part of the Coconut Coast, an area of lavish, all-inclusive resorts."
+    "description": "Punta Cana, a resort town in the eastern Dominican Republic, is known for its clear waters and stretchy beaches lined with coconut palms. It's part of the Coconut Coast, an area of lavish, all-inclusive resorts.",
+    "tags": ["Warm", "Beaches", "High", "Car", "Beaches"]
   },
   {
     "city": "São Paulo",
     "country": "Brazil",
-    "description": "São Paulo, Brazil’s vibrant financial center, is among the world's most populous cities, with numerous cultural institutions and a rich architectural tradition."
+    "description": "São Paulo, Brazil’s vibrant financial center, is among the world's most populous cities, with numerous cultural institutions and a rich architectural tradition.",
+    "tags": ["Warm", "Dinning", "High", "Bus", "Museums"]
   },
   {
     "city": "Zürich",
     "country": "Switzerland",
-    "description": "Zürich, the largest city in Switzerland, is well known for its well-preserved medieval old town and its waterfront promenades along the Limmat River and Lake Zürich. The city’s museums and galleries, including the Swiss National Museum, reflect its rich cultural history."
+    "description": "Zürich, the largest city in Switzerland, is well known for its well-preserved medieval old town and its waterfront promenades along the Limmat River and Lake Zürich. The city’s museums and galleries, including the Swiss National Museum, reflect its rich cultural history.",
+    "tags": ["Cold", "Museums", "High", "Train", "Parks"]
   },
   {
     "city": "Montreal",
     "country": "Canada",
-    "description": "Montreal is the largest city in Canada’s Québec province. It's set on an island in the Saint Lawrence River and named after Mt. Royal, the triple-peaked hill at its heart."
+    "description": "Montreal is the largest city in Canada’s Québec province. It's set on an island in the Saint Lawrence River and named after Mt. Royal, the triple-peaked hill at its heart.",
+    "tags": ["Cold", "Dinning", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Washington D.C.",
     "country": "United States",
-    "description": "Washington, D.C., the U.S. capital, is a compact city on the Potomac River, bordering the states of Maryland and Virginia. It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House, and Supreme Court."
+    "description": "Washington, D.C., the U.S. capital, is a compact city on the Potomac River, bordering the states of Maryland and Virginia. It’s defined by imposing neoclassical monuments and buildings – including the iconic ones that house the federal government’s 3 branches: the Capitol, White House, and Supreme Court.",
+    "tags": ["Warm", "Museums", "High", "Train", "Museums"]
   },
   {
     "city": "Chicago",
     "country": "United States",
-    "description": "Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S. Famed for its bold architecture, it has a skyline punctuated by skyscrapers such as the iconic John Hancock Center, 1,451-ft. Willis Tower (formerly the Sears Tower), and the neo-Gothic Tribune Tower."
+    "description": "Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S. Famed for its bold architecture, it has a skyline punctuated by skyscrapers such as the iconic John Hancock Center, 1,451-ft. Willis Tower (formerly the Sears Tower), and the neo-Gothic Tribune Tower.",
+    "tags": ["Cold", "Shopping", "High", "Train", "Parks"]
   },
   {
     "city": "Düsseldorf",
     "country": "Germany",
-    "description": "Düsseldorf is a city in western Germany known for its fashion industry and art scene. It's divided by the Rhine River, with its Old Town on the east bank and modern commercial areas to the west."
+    "description": "Düsseldorf is a city in western Germany known for its fashion industry and art scene. It's divided by the Rhine River, with its Old Town on the east bank and modern commercial areas to the west.",
+    "tags": ["Cold", "Shopping", "Medium", "Train", "Parks"]
   },
   {
     "city": "Boston",
     "country": "United States",
-    "description": "Boston, Massachusetts’ capital and largest city, is one of the oldest municipalities in the U.S. Its rich history includes the American Revolution, as seen in the Tea Party Ships and Museum and the Battle of Bunker Hill."
+    "description": "Boston, Massachusetts’ capital and largest city, is one of the oldest municipalities in the U.S. Its rich history includes the American Revolution, as seen in the Tea Party Ships and Museum and the Battle of Bunker Hill.",
+    "tags": ["Cold", "Museums", "High", "Train", "Parks"]
   },
   {
     "city": "Chengdu",
     "country": "China",
-    "description": "Chengdu, the capital of China’s southwest Sichuan province, is known for its spicy cuisine and as the home of the research base of giant panda breeding. It’s a city of leisure with teahouses and parks."
+    "description": "Chengdu, the capital of China’s southwest Sichuan province, is known for its spicy cuisine and as the home of the research base of giant panda breeding. It’s a city of leisure with teahouses and parks.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Edinburgh",
     "country": "United Kingdom",
-    "description": "Edinburgh, Scotland's compact, hilly capital, has a medieval Old Town and elegant Georgian New Town with gardens and neoclassical buildings. Looming over the city is Edinburgh Castle, home to Scotland’s crown jewels."
+    "description": "Edinburgh, Scotland's compact, hilly capital, has a medieval Old Town and elegant Georgian New Town with gardens and neoclassical buildings. Looming over the city is Edinburgh Castle, home to Scotland’s crown jewels.",
+    "tags": ["Cold", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "San Jose",
     "country": "United States",
-    "description": "San Jose, a large city surrounded by rolling hills in Silicon Valley, a major technology hub in California's Bay Area. Architectural landmarks, from the 1883 Italianate-style Oddfellows building to Spanish Colonial Revival structures, make up the downtown historic district."
+    "description": "San Jose, a large city surrounded by rolling hills in Silicon Valley, a major technology hub in California's Bay Area. Architectural landmarks, from the 1883 Italianate-style Oddfellows building to Spanish Colonial Revival structures, make up the downtown historic district.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Parks"]
   },
   {
     "city": "Tehran",
     "country": "Iran",
-    "description": "Tehran, the capital of Iran, lies near the Elburz Mountains. It’s known for its modern architecture juxtaposed with historical sites, such as the opulent Golestan Palace, with its halls adorned with mirrors."
+    "description": "Tehran, the capital of Iran, lies near the Elburz Mountains. It’s known for its modern architecture juxtaposed with historical sites, such as the opulent Golestan Palace, with its halls adorned with mirrors.",
+    "tags": ["Warm", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Houston",
     "country": "United States",
-    "description": "Houston is a large metropolis in Texas, extending to Galveston Bay. It’s closely linked with the Space Center Houston, the coastal visitor center at NASA’s astronaut training and flight control complex."
+    "description": "Houston is a large metropolis in Texas, extending to Galveston Bay. It’s closely linked with the Space Center Houston, the coastal visitor center at NASA’s astronaut training and flight control complex.",
+    "tags": ["Warm", "Sports", "High", "Car", "Parks"]
   },
   {
     "city": "Hamburg",
     "country": "Germany",
-    "description": "Hamburg, a major port city in northern Germany, is connected to the North Sea by the Elbe River. It's crossed by hundreds of canals, and also contains large areas of parkland. Inner Alster lake is dotted with boats and surrounded by cafes."
+    "description": "Hamburg, a major port city in northern Germany, is connected to the North Sea by the Elbe River. It's crossed by hundreds of canals, and also contains large areas of parkland. Inner Alster lake is dotted with boats and surrounded by cafes.",
+    "tags": ["Cold", "Shopping", "High", "Boat", "Parks"]
   },
   {
     "city": "Cape Town",
     "country": "South Africa",
-    "description": "Cape Town is a port city on South Africa’s southwest coast, on a peninsula beneath the imposing Table Mountain. Slowly rotating cable cars climb to the mountain’s flat top, from which there are sweeping views of the city."
+    "description": "Cape Town is a port city on South Africa’s southwest coast, on a peninsula beneath the imposing Table Mountain. Slowly rotating cable cars climb to the mountain’s flat top, from which there are sweeping views of the city.",
+    "tags": ["Warm", "Beaches", "Medium", "Car", "Beaches"]
   },
   {
     "city": "Manila",
     "country": "Philippines",
-    "description": "Manila, the capital of the Philippines, is a densely populated bayside city on the island of Luzon, which mixes Spanish colonial architecture with modern skyscrapers."
+    "description": "Manila, the capital of the Philippines, is a densely populated bayside city on the island of Luzon, which mixes Spanish colonial architecture with modern skyscrapers.",
+    "tags": ["Warm", "Dinning", "Low", "Train", "Museums"]
   },
   {
     "city": "Bogota",
     "country": "Colombia",
-    "description": "Bogotá is Colombia’s high-altitude capital. La Candelaria, its cobblestoned center, features colonial-era landmarks like the neoclassical performance hall Teatro Colón and the 17th-century Iglesia de San Francisco."
+    "description": "Bogotá is Colombia’s high-altitude capital. La Candelaria, its cobblestoned center, features colonial-era landmarks like the neoclassical performance hall Teatro Colón and the 17th-century Iglesia de San Francisco.",
+    "tags": ["Cold", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Xi'an",
     "country": "China",
-    "description": "Xi'an, the capital of Shaanxi Province, is known for the Terracotta Army, the thousands of life-size, hand-molded figures buried with China’s first emperor, Qin Shi Huang."
+    "description": "Xi'an, the capital of Shaanxi Province, is known for the Terracotta Army, the thousands of life-size, hand-molded figures buried with China’s first emperor, Qin Shi Huang.",
+    "tags": ["Warm", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Beirut",
     "country": "Lebanon",
-    "description": "Beirut, Lebanon’s capital, is a vibrant city on the Mediterranean coast with a rich history dating back more than 5,000 years. It's known for its exquisite cuisine, archaeological sites, and lively nightlife."
+    "description": "Beirut, Lebanon’s capital, is a vibrant city on the Mediterranean coast with a rich history dating back more than 5,000 years. It's known for its exquisite cuisine, archaeological sites, and lively nightlife.",
+    "tags": ["Warm", "Dinning", "Medium", "Car", "Beaches"]
   },
   {
     "city": "Geneva",
     "country": "Switzerland",
-    "description": "Geneva is a city in Switzerland that lies at the southern tip of expansive Lac Léman (Lake Geneva). Surrounded by the Alps and Jura mountains, the city has views of dramatic Mont Blanc."
+    "description": "Geneva is a city in Switzerland that lies at the southern tip of expansive Lac Léman (Lake Geneva). Surrounded by the Alps and Jura mountains, the city has views of dramatic Mont Blanc.",
+    "tags": ["Cold", "Museums", "High", "Bus", "Parks"]
   },
   {
     "city": "Colombo",
     "country": "Sri Lanka",
-    "description": "Colombo, the capital of Sri Lanka, is a large city known for its mixing of modern life with remnants of a colonial past that includes landscaped gardens and historic buildings."
+    "description": "Colombo, the capital of Sri Lanka, is a large city known for its mixing of modern life with remnants of a colonial past that includes landscaped gardens and historic buildings.",
+    "tags": ["Warm", "Shopping", "Medium", "Bus", "Parks"]
   },
   {
     "city": "Xiamen",
     "country": "China",
-    "description": "Xiamen is a port city on China’s southeast coast, across a strait from Taiwan. It's known for its mild climate, Hokkien culture, and colonial architecture, as well as Gulangyu Island, accessible by ferry."
+    "description": "Xiamen is a port city on China’s southeast coast, across a strait from Taiwan. It's known for its mild climate, Hokkien culture, and colonial architecture, as well as Gulangyu Island, accessible by ferry.",
+    "tags": ["Warm", "Beaches", "Medium", "Car", "Beaches"]
   },
   {
     "city": "Bucharest",
     "country": "Romania",
-    "description": "Bucharest, in southern Romania, is the country’s capital and commercial center. Its iconic building is the massive, communist-era Palatul Parlamentului government building, which has 1,100 rooms."
+    "description": "Bucharest, in southern Romania, is the country’s capital and commercial center. Its iconic building is the massive, communist-era Palatul Parlamentului government building, which has 1,100 rooms.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Museums"]
   },
   {
     "city": "Casablanca",
     "country": "Morocco",
-    "description": "Casablanca is a port city and commercial hub in western Morocco, fronting the Atlantic Ocean. The city's French colonial legacy is seen in its downtown Mauresque architecture, a blend of Moorish style and European art deco."
+    "description": "Casablanca is a port city and commercial hub in western Morocco, fronting the Atlantic Ocean. The city's French colonial legacy is seen in its downtown Mauresque architecture, a blend of Moorish style and European art deco.",
+    "tags": ["Warm", "Dinning", "Medium", "Train", "Beaches"]
   },
   {
     "city": "Atlanta",
     "country": "United States",
-    "description": "Nestled in the heart of Georgia, Atlanta is a bustling metropolis rich in history and culture. Known for its pivotal role in the Civil Rights Movement, it offers visitors the Martin Luther King Jr. National Historic Site, alongside world-class museums like the Atlanta History Center. The city's vibrant food scene and the verdant expanse of Piedmont Park add to its charm, making it a must-visit destination."
+    "description": "Nestled in the heart of Georgia, Atlanta is a bustling metropolis rich in history and culture. Known for its pivotal role in the Civil Rights Movement, it offers visitors the Martin Luther King Jr. National Historic Site, alongside world-class museums like the Atlanta History Center. The city's vibrant food scene and the verdant expanse of Piedmont Park add to its charm, making it a must-visit destination.",
+    "tags": ["Warm", "Museums", "Medium", "Car", "Parks"]
   },
   {
     "city": "Sofia",
     "country": "Bulgaria",
-    "description": "Sofia, the capital of Bulgaria, lies at the foot of the majestic Vitosha Mountain, offering a unique blend of ancient history and modernity. Visitors can explore the St. Alexander Nevsky Cathedral, one of the largest Eastern Orthodox cathedrals, and wander through the remnants of Roman Serdica. The city's lush parks and vibrant arts scene are complemented by its thermal springs, making Sofia a captivating destination."
+    "description": "Sofia, the capital of Bulgaria, lies at the foot of the majestic Vitosha Mountain, offering a unique blend of ancient history and modernity. Visitors can explore the St. Alexander Nevsky Cathedral, one of the largest Eastern Orthodox cathedrals, and wander through the remnants of Roman Serdica. The city's lush parks and vibrant arts scene are complemented by its thermal springs, making Sofia a captivating destination.",
+    "tags": ["Cold", "Museums", "Low", "Bus", "Parks"]
   },
   {
     "city": "Dalian",
     "country": "China",
-    "description": "Dalian, a dynamic port city on the Liaodong Peninsula, is renowned for its pleasant climate and scenic beaches. The city seamlessly blends Russian and Japanese architectural influences, evident in the Zhongshan Square and the Dalian Forest Zoo. Offering an array of sea-related activities and fresh seafood, Dalian is a vibrant destination for travelers seeking a blend of nature and urban exploration."
+    "description": "Dalian, a dynamic port city on the Liaodong Peninsula, is renowned for its pleasant climate and scenic beaches. The city seamlessly blends Russian and Japanese architectural influences, evident in the Zhongshan Square and the Dalian Forest Zoo. Offering an array of sea-related activities and fresh seafood, Dalian is a vibrant destination for travelers seeking a blend of nature and urban exploration.",
+    "tags": ["Warm", "Beaches", "Medium", "Train", "Beaches"]
   },
   {
     "city": "Montevideo",
     "country": "Uruguay",
-    "description": "Montevideo, the capital of Uruguay, sits along the Rio de la Plata, offering a rich tapestry of cultural experiences. The city is known for its picturesque beachfront, the bustling Mercado del Puerto, and the historic Ciudad Vieja (Old City) with its colonial-era buildings. Montevideo's relaxed atmosphere, coupled with its lively music and arts scene, makes it an enchanting South American gem."
+    "description": "Montevideo, the capital of Uruguay, sits along the Rio de la Plata, offering a rich tapestry of cultural experiences. The city is known for its picturesque beachfront, the bustling Mercado del Puerto, and the historic Ciudad Vieja (Old City) with its colonial-era buildings. Montevideo's relaxed atmosphere, coupled with its lively music and arts scene, makes it an enchanting South American gem.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Beaches"]
   },
   {
     "city": "Amman",
     "country": "Jordan",
-    "description": "Amman, the capital of Jordan, is a city where ancient ruins meet modernity. Visitors can explore the historic Citadel, with its Roman amphitheater and the Umayyad Palace, or enjoy the contemporary culture in its bustling cafes and art galleries. With its friendly locals and delicious cuisine, Amman serves as the perfect gateway to the country's otherworldly landscapes and historical treasures."
+    "description": "Amman, the capital of Jordan, is a city where ancient ruins meet modernity. Visitors can explore the historic Citadel, with its Roman amphitheater and the Umayyad Palace, or enjoy the contemporary culture in its bustling cafes and art galleries. With its friendly locals and delicious cuisine, Amman serves as the perfect gateway to the country's otherworldly landscapes and historical treasures.",
+    "tags": ["Warm", "Museums", "Medium", "Car", "Museums"]
   },
   {
     "city": "Hangzhou",
     "country": "China",
-    "description": "Hangzhou is celebrated for its breathtaking natural beauty and cultural heritage. The city is best known for the West Lake, a UNESCO World Heritage site, where ancient temples, traditional gardens, and romantic causeways await. Hangzhou's rich tea culture, exemplified by the Longjing tea plantations, and its historical silk industry make it a fascinating blend of natural splendor and cultural depth."
+    "description": "Hangzhou is celebrated for its breathtaking natural beauty and cultural heritage. The city is best known for the West Lake, a UNESCO World Heritage site, where ancient temples, traditional gardens, and romantic causeways await. Hangzhou's rich tea culture, exemplified by the Longjing tea plantations, and its historical silk industry make it a fascinating blend of natural splendor and cultural depth.",
+    "tags": ["Warm", "Parks", "High", "Bus", "Parks"]
   },
   {
     "city": "Pune",
     "country": "India",
-    "description": "Pune, known as the 'Oxford of the East,' is a vibrant metropolis that boasts a rich historical legacy alongside its role as a major hub for education and technology in India. The city is home to grand forts, palaces, and temples, reflecting its rich Maratha heritage. Pune's bustling streets, thriving arts scene, and verdant hill forts offer a dynamic blend of the ancient and the contemporary."
+    "description": "Pune, known as the 'Oxford of the East,' is a vibrant metropolis that boasts a rich historical legacy alongside its role as a major hub for education and technology in India. The city is home to grand forts, palaces, and temples, reflecting its rich Maratha heritage. Pune's bustling streets, thriving arts scene, and verdant hill forts offer a dynamic blend of the ancient and the contemporary.",
+    "tags": ["Warm", "Museums", "Low", "Bus", "Museums"]
   },
   {
     "city": "Durban",
     "country": "South Africa",
-    "description": "Durban is a lively port city known for its African, Indian, and colonial influences, beautifully reflected in its architecture and cuisine. The Golden Mile, Durban's beachfront, offers sun-drenched beaches and a vibrant boardwalk. The city is also a gateway to the region's diverse wildlife and Zulu culture, making it a thrilling destination for adventurers and culture enthusiasts alike."
+    "description": "Durban is a lively port city known for its African, Indian, and colonial influences, beautifully reflected in its architecture and cuisine. The Golden Mile, Durban's beachfront, offers sun-drenched beaches and a vibrant boardwalk. The city is also a gateway to the region's diverse wildlife and Zulu culture, making it a thrilling destination for adventurers and culture enthusiasts alike.",
+    "tags": ["Warm", "Beaches", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Dallas",
     "country": "United States",
-    "description": "Dallas, a modern metropolis in north Texas, is a commercial and cultural hub with a rich history. The city offers a variety of attractions, from the Sixth Floor Museum at Dealey Plaza, which chronicles the assassination of President John F. Kennedy, to the sprawling Dallas Arts District. With its dynamic sports scene, expansive parks, and renowned barbecue, Dallas epitomizes the Texan spirit."
+    "description": "Dallas, a modern metropolis in north Texas, is a commercial and cultural hub with a rich history. The city offers a variety of attractions, from the Sixth Floor Museum at Dealey Plaza, which chronicles the assassination of President John F. Kennedy, to the sprawling Dallas Arts District. With its dynamic sports scene, expansive parks, and renowned barbecue, Dallas epitomizes the Texan spirit.",
+    "tags": ["Warm", "Shopping", "High", "Car", "Museums"]
   },
   {
     "city": "Accra",
     "country": "Ghana",
-    "description": "Accra, the vibrant capital of Ghana, offers a blend of modern skyscrapers, bustling markets, and rich history. It's a city where traditional crafts are sold beside contemporary art galleries, offering a glimpse into Ghana's culture and heritage. With its sunny beaches, historic forts, and lively nightlife, Accra is a gateway to exploring the heart of West Africa."
+    "description": "Accra, the vibrant capital of Ghana, offers a blend of modern skyscrapers, bustling markets, and rich history. It's a city where traditional crafts are sold beside contemporary art galleries, offering a glimpse into Ghana's culture and heritage. With its sunny beaches, historic forts, and lively nightlife, Accra is a gateway to exploring the heart of West Africa.",
+    "tags": ["Warm", "Dinning", "Low", "Bus", "Beaches"]
   },
   {
     "city": "Quito",
     "country": "Ecuador",
-    "description": "Nestled high in the Andes, Quito is the capital of Ecuador and a UNESCO World Heritage site. This city is a blend of colonial charm and contemporary life. Visitors can explore ancient Incan ruins, baroque churches, and the bustling Plaza de la Independencia. Quito serves as a starting point for adventures into the Amazon rainforest and the enchanted Galapagos Islands."
+    "description": "Nestled high in the Andes, Quito is the capital of Ecuador and a UNESCO World Heritage site. This city is a blend of colonial charm and contemporary life. Visitors can explore ancient Incan ruins, baroque churches, and the bustling Plaza de la Independencia. Quito serves as a starting point for adventures into the Amazon rainforest and the enchanted Galapagos Islands.",
+    "tags": ["Cold", "Museums", "Medium", "Bus", "Museums"]
   },
   {
     "city": "Tianjin",
     "country": "China",
-    "description": "Tianjin, a coastal metropolis in northern China, is known for its preserved European-style architecture, innovative skyscrapers, and the iconic Haihe River that runs through the city. With its blend of modernity and tradition, Tianjin offers an array of experiences, from exploring ancient culture at the Tianjin Museum to enjoying the scenic views from the Tianjin Eye Ferris wheel."
+    "description": "Tianjin, a coastal metropolis in northern China, is known for its preserved European-style architecture, innovative skyscrapers, and the iconic Haihe River that runs through the city. With its blend of modernity and tradition, Tianjin offers an array of experiences, from exploring ancient culture at the Tianjin Museum to enjoying the scenic views from the Tianjin Eye Ferris wheel.",
+    "tags": ["Warm", "Shopping", "Medium", "Train", "Parks"]
   },
   {
     "city": "Qingdao",
     "country": "China",
-    "description": "Qingdao, famous for its Tsingtao beer, is a beautiful coastal city in eastern China. It boasts a unique blend of German colonial architecture and classic Chinese elements, set against a backdrop of lush hills and the Yellow Sea. The city's sandy beaches, scenic parks, and the bustling Tsingtao Brewery Museum make it a popular destination for both history enthusiasts and beach lovers."
+    "description": "Qingdao, famous for its Tsingtao beer, is a beautiful coastal city in eastern China. It boasts a unique blend of German colonial architecture and classic Chinese elements, set against a backdrop of lush hills and the Yellow Sea. The city's sandy beaches, scenic parks, and the bustling Tsingtao Brewery Museum make it a popular destination for both history enthusiasts and beach lovers.",
+    "tags": ["Warm", "Dinning", "Medium", "Bus", "Beaches"]
   },
   {
     "city": "Lagos",
     "country": "Nigeria",
-    "description": "Lagos, Nigeria's largest city, pulses with energy and diversity. Known for its musical heritage, vibrant arts scene, and lively markets, Lagos offers a dynamic mix of urban culture and traditional Nigerian life. The city's waterfront, luxury boutiques, and bustling nightlife provide a unique experience for visitors seeking to explore the heart of Africa's entertainment capital."
+    "description": "Lagos, Nigeria's largest city, pulses with energy and diversity. Known for its musical heritage, vibrant arts scene, and lively markets, Lagos offers a dynamic mix of urban culture and traditional Nigerian life. The city's waterfront, luxury boutiques, and bustling nightlife provide a unique experience for visitors seeking to explore the heart of Africa's entertainment capital.",
+    "tags": ["Warm", "Shopping", "Low", "Bus", "Beaches"]
   }
 ]
