@@ -73,65 +73,66 @@ router.get("/:id", authenticateUser, async (req, res, next) => {
 
     if (placeId) images = await getImageUrls(placeId);
 
-    const [likes, dislikes, views, isLiked, isDisliked, isSaved] = await Promise.all([
-      db
-        .select({
-          likes: count(rating.id),
-        })
-        .from(rating)
-        .where(
-          and(eq(rating.destinationId, destinationId), eq(rating.like, true))
-        )
-        .then(takeUniqueOrThrow),
-      db
-        .select({
-          dislikes: count(rating.id),
-        })
-        .from(rating)
-        .where(
-          and(eq(rating.destinationId, destinationId), eq(rating.like, false))
-        )
-        .then(takeUniqueOrThrow),
-      db
-        .select({
-          views: count(view.id),
-        })
-        .from(view)
-        .where(eq(view.destinationId, destinationId))
-        .then(takeUniqueOrThrow),
-      db
-        .select()
-        .from(rating)
-        .where(
-          and(
-            eq(rating.destinationId, destinationId),
-            eq(rating.userId, userId),
-            eq(rating.like, true)
+    const [likes, dislikes, views, isLiked, isDisliked, isSaved] =
+      await Promise.all([
+        db
+          .select({
+            likes: count(rating.id),
+          })
+          .from(rating)
+          .where(
+            and(eq(rating.destinationId, destinationId), eq(rating.like, true))
           )
-        )
-        .then((result) => result.length > 0),
-      db
-        .select()
-        .from(rating)
-        .where(
-          and(
-            eq(rating.destinationId, destinationId),
-            eq(rating.userId, userId),
-            eq(rating.like, false)
+          .then(takeUniqueOrThrow),
+        db
+          .select({
+            dislikes: count(rating.id),
+          })
+          .from(rating)
+          .where(
+            and(eq(rating.destinationId, destinationId), eq(rating.like, false))
           )
-        )
-        .then((result) => result.length > 0),
-      db
-        .select()
-        .from(savedDestination)
-        .where(
-          and(
-            eq(savedDestination.destinationId, destinationId),
-            eq(savedDestination.userId, userId)
+          .then(takeUniqueOrThrow),
+        db
+          .select({
+            views: count(view.id),
+          })
+          .from(view)
+          .where(eq(view.destinationId, destinationId))
+          .then(takeUniqueOrThrow),
+        db
+          .select()
+          .from(rating)
+          .where(
+            and(
+              eq(rating.destinationId, destinationId),
+              eq(rating.userId, userId),
+              eq(rating.like, true)
+            )
           )
-        )
-        .then((result) => result.length > 0),
-    ]);
+          .then((result) => result.length > 0),
+        db
+          .select()
+          .from(rating)
+          .where(
+            and(
+              eq(rating.destinationId, destinationId),
+              eq(rating.userId, userId),
+              eq(rating.like, false)
+            )
+          )
+          .then((result) => result.length > 0),
+        db
+          .select()
+          .from(savedDestination)
+          .where(
+            and(
+              eq(savedDestination.destinationId, destinationId),
+              eq(savedDestination.userId, userId)
+            )
+          )
+          .then((result) => result.length > 0),
+      ]);
 
     res.status(200).json({
       ...destinationResult,
