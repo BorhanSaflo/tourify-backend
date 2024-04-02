@@ -21,6 +21,7 @@ router.get("/", async (req, res, next) => {
         id: destination.id,
         name: destination.name,
         country: destination.country,
+        description: destination.description,
       })
       .from(destination)
       .innerJoin(
