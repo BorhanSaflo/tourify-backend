@@ -3,6 +3,7 @@ import db from "../../db";
 import { destination, destinationTag, tag } from "../../db/schema";
 import { NotFoundError } from "../../utils/errors";
 import { eq, inArray, sql } from "drizzle-orm";
+import { getDestinationImages } from "@/utils";
 
 const router = Router();
 
@@ -20,7 +21,6 @@ router.get("/", async (req, res, next) => {
         id: destination.id,
         name: destination.name,
         country: destination.country,
-        tagCount: sql`COUNT(${destinationTag.tagId})`,
       })
       .from(destination)
       .innerJoin(
@@ -36,6 +36,7 @@ router.get("/", async (req, res, next) => {
       )
       .groupBy(destination.id)
       .orderBy(sql`COUNT(${destinationTag.tagId}) DESC`)
+      .limit(5)
       .execute();
 
     if (destinationsWithMostTags.length === 0) {
@@ -44,7 +45,9 @@ router.get("/", async (req, res, next) => {
       );
     }
 
-    res.json(destinationsWithMostTags);
+    const payload = await getDestinationImages(destinationsWithMostTags);
+
+    res.json(payload);
   } catch (error) {
     next(error);
   }
